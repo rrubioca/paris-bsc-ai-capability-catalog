@@ -18,9 +18,11 @@ The review checks for actual addresses, internal names/domains, credentials, con
 
 ## Verification record
 
-Before repository creation, all 14 intended publication files passed the file-inventory check, all 128 Markdown links passed local target and heading checks (eight unique external URLs were checked separately against public primary sources), and automated checks found no private network address/name, credential pattern, operational access command or affirmative readiness label. The content was also reviewed for claim scope and functional-topology disclosure. Automated pattern checks complement the content review; they do not prove absence of every possible sensitive fact.
+Before repository creation, the original 14 publication files passed inventory, link and sensitive-content checks. Two self-contained SVG topology previews were subsequently added so readers do not depend on GitHub's Mermaid renderer. The final 16-file package passed the inventory check and local target/heading checks for all 130 Markdown references. Its eight unique external documentation URLs were checked separately against public primary sources. The SVG files contain no scripts, external assets or active content.
 
-Public repository and published-content verification: pending publication.
+Automated checks found no private network address/name, credential pattern, operational access command or affirmative readiness label. The content was also reviewed for claim scope and functional-topology disclosure. Pattern checks complement that review; they do not prove absence of every possible sensitive fact.
+
+Publication was verified in the public `rrubioca/paris-bsc-ai-capability-catalog` repository. All 16 remote file object identifiers matched the reviewed local files. The repository was successfully queried with Git credential helpers disabled, confirming anonymous read access. GitHub displayed the required validation status in the repository description and rendered README, and exposed the two static topology images in the architecture document. The independent engineering repository remained private with its last-push timestamp unchanged from the source review. No private-cluster access was exposed or used.
 
 ## Remaining limits
 

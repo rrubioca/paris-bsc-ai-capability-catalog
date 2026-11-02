@@ -1,0 +1,19 @@
+# Raw operational artifacts must never enter this documentation catalog.
+*.log
+*.zip
+*.har
+*.pcap
+*.pcapng
+*.pem
+*.key
+*.pfx
+*.p12
+.env
+.env.*
+*kubeconfig*
+credentials*
+secrets*
+raw-evidence/
+diagnostics/
+.DS_Store
+Thumbs.db

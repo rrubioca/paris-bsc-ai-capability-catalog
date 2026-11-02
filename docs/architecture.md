@@ -6,6 +6,11 @@ These are **source-derived functional views**, not a live inventory or an implem
 
 ## Application and data flow
 
+![Application and data flow using abstract functional roles](assets/rag-data-flow.svg)
+
+<details>
+<summary>Editable Mermaid source for the same functional topology</summary>
+
 ```mermaid
 flowchart TB
     User[Approved session participant] --> Gateway[Optional presentation authentication gateway]
@@ -35,6 +40,8 @@ flowchart TB
     Cache --> Storage
 ```
 
+</details>
+
 The chain server, playground, three NIM roles and Milvus are explicitly described in the reviewed engineering definition. Ingestion is a **functional role**, not an assertion that a separate ingestion service is deployed. The storage lifecycle documentation refers to coordinated Milvus, etcd and MinIO data; the diagram uses metadata and object-store roles rather than actual deployment identities. Per-component volume attachment and exact cache placement must be checked against the rendered chart and deployed inventory before runtime sign-off. The chart dependency itself was not available as a reviewed source artifact in this publication.
 
 Ingestion prepares document content, creates embeddings and makes content available for retrieval. A question then flows through embedding, retrieval, reranking and contextual generation. These arrows describe the intended mechanism from the source description and general RAG model; the current runtime execution trace has not been published. Source attribution, answer accuracy and permission enforcement must be evaluated independently.
@@ -42,6 +49,11 @@ Ingestion prepares document content, creates embeddings and makes content availa
 The configured authenticated presentation path is shown. Source also permits presentation without that gateway; it is a configuration option, not a validated secure deployment pattern. Gateway authentication does not prove document-level authorization or transport encryption.
 
 ## Automation and control dependencies
+
+![Automation and lifecycle using abstract functional roles](assets/rag-automation-flow.svg)
+
+<details>
+<summary>Editable Mermaid source for the same automation topology</summary>
 
 ```mermaid
 flowchart TB
@@ -71,6 +83,8 @@ flowchart TB
     Delete --> Release[Release environment namespace only when empty]
     Storage --> Recovery[Separate application-consistent backup and restore process required]
 ```
+
+</details>
 
 The sequence reflects source dependencies, including the post-gateway correction and cleanup role attached to termination. Destruction ordering, failure recovery and repeatability still require laboratory execution evidence. Manual security onboarding is a prerequisite, not an automated application step. Entitlement and artifact arrows describe dependencies only; credential handling details and acquisition paths remain private.
 

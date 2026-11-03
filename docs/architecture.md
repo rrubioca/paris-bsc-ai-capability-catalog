@@ -2,6 +2,8 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 
+[Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
+
 These are **source-derived functional views**, not a live inventory or an implementation map. Logical labels conceal actual infrastructure identities. No addresses, internal DNS names, service names, ports, access routes, network zones, device counts or management endpoints are published. Arrows express functional dependencies, not permitted network connections. Physical network design and controls cannot be reconstructed from these views.
 
 ## Application and data flow

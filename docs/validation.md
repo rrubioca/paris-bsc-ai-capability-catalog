@@ -2,6 +2,8 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 
+[Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
+
 Publication review date: **2 November 2026**. This is a documentation and source review date, not a laboratory test date. There are no published latency, throughput, accuracy, reliability, utilization, savings or return-on-investment measurements.
 
 ## Evidence vocabulary
@@ -33,6 +35,23 @@ These states apply to specific claims, not blanket readiness. Engineering metada
 | VAL-12 | Vertical use cases and business value | PENDING | Commercial hypotheses documented | Customer-specific corpus, expert assessment and agreed benefit measurements |
 
 The eleven isolated test definitions cover deletion, audit-only behavior, retained annotations, retained labels, foreign ownership, surviving scheduled-job references, surviving stateful-workload references, API failure, invalid data, changed resource identity and deletion conflict. They do not call a real cluster and do not establish live storage safety. They were **not executed as part of this publication**.
+
+## Vertical assessment and business use case boundaries
+
+This technical assessment retains the detailed coverage and scope behind the commercial opportunities. It adds no new test result. All six use cases are potential applications of the shared pilot; there is no reviewed vertical-specific runtime evidence or measured sector outcome in the publication materials. They remain within [VAL-12](#source-and-test-status-matrix). Dataset descriptions below are proposed evaluation inputs, not data already tested.
+
+| Business reference | Proposed evaluation and outstanding checks | Technical boundaries |
+|---|---|---|
+| [UC-01 · Financial services](business-use-cases.md#financial-services--internal-policy-and-product-knowledge) | Synthetic/public policy examples; expert-reviewed questions, source relevance, unsupported answers, ambiguity and manual-lookup comparison; access entitlements, auditability and jurisdiction-specific assessment | No validated financial advice, automated eligibility decision, regulatory interpretation or compliance approval |
+| [UC-02 · Manufacturing](business-use-cases.md#manufacturing--maintenance-and-technical-documentation) | Approved sample manuals; revision discrimination, wrong-version answers and unsupported instructions; OCR, diagrams, tables and multilingual assessment | Predictive maintenance and machine control unvalidated; the assistant is not a safety control or autonomous maintenance authority |
+| [UC-03 · Healthcare](business-use-cases.md#healthcare--non-clinical-administrative-knowledge) | Non-sensitive administrative examples; supported lookups, out-of-scope/clinical questions and human referral | Diagnosis, treatment, triage, patient-data processing, clinical accuracy and healthcare compliance outside the demonstrated scope |
+| [UC-04 · Public sector](business-use-cases.md#public-sector--policy-and-guidance-navigation) | Public documents; source relevance, outdated guidance, unanswered questions and expert review | Citizen eligibility decisions, legal advice, accessibility conformance and regulatory compliance unvalidated; responsible officials retain decision ownership |
+| [UC-05 · Retail and distribution](business-use-cases.md#retail-and-distribution--product-and-support-knowledge) | Approved static sample catalog; product disambiguation, missing attributes, superseded specifications and manual-lookup comparison | Live inventory, prices, order execution, CRM integration, suitability recommendations and revenue impact unvalidated |
+| [UC-06 · IT services](business-use-cases.md#it-services--runbooks-and-platform-enablement) | Synthetic/sanitized runbooks; retrieval and human review; deployment dependencies and repeatable lifecycle execution assessed separately | Autonomous remediation, full infrastructure provisioning, monitoring integration, automatic recovery and complete zero-touch lifecycle unvalidated |
+
+Historical reports of PDF ingestion, retrieval and inference remain historical reports, not a reviewed runtime evidence pack. The engineering source contains Blackwell-related configuration, a proxy correction and storage lifecycle safeguards; no live cluster test was performed for the catalog publication. Current-revision repeatability, secure operation and lifecycle validation remain open, as detailed in the matrix above and EVD records below.
+
+Technical qualification must assess identity/document authorization, transport, model entitlement, software/profile compatibility, approved artifact acquisition, storage and recovery ownership. Local inference does not establish air-gapped operation or that every dependency and data path remains on premises. External live demonstrations require the matching revision, reviewed evidence and applicable laboratory approval described below.
 
 ## EVD-RAG-001 — Functional RAG evidence
 

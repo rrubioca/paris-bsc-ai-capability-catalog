@@ -10,6 +10,12 @@ The initial scope is only SAIF-AI-001, the NVIDIA RAG pilot adapted for RTX PRO 
 
 Keep executive and business content ahead of architecture and technical details. Maintain stable TC, DEMO, EVD and EXT identifiers. Each business use case must link to enabling technical capabilities, the actual demonstration/evidence status and primary external documentation. Label potential vertical applications separately from tested demonstrations.
 
+## Reader experience and editorial model
+
+Follow the [navigation guide](docs/navigation.md) for the document map and identifier conventions. Executive and business pages lead with purpose, audience, positioning and potential value. Show the common pilot status and concise scope once per page; use neutral DEMO link labels in commercial tables. Keep detailed test procedures, dataset coverage, missing evidence and vertical-specific technical boundaries in the technical assessment pages, with direct links through the demo records. Do not present unverified outcomes as successful or hide material use constraints.
+
+Use stable SAIF-AI, UC, TC, DEMO, VAL, EVD, EXT and RM identifiers in their documented sequence scopes. IDs identify records rather than execution results or maturity. Preserve existing paths and anchors; add navigation to new documents and link each record to its parent solution. Keep the capability → demonstration → external-documentation chain attached to each business opportunity.
+
 ## Claims and evidence
 
 Distinguish source configuration, historical reports, test definitions and observed runtime results. Never invent versions, test dates, reviewers, approvals or metrics. A metadata label is not an approval. A public vendor demo is not Paris BSC evidence. A newer source revision does not inherit a previous runtime result automatically.

@@ -2,6 +2,8 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 
+[Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
+
 ## Functional and business limits
 
 PDF ingestion, retrieval and inference are historically reported. Current-revision results, answer correctness, refusal behavior, source-attribution presentation and reproducibility lack a reviewed runtime evidence pack. No accuracy, performance, availability, scaling, concurrency, financial benefit or sector-specific outcome is established. OCR, multimodal processing, multilingual quality, content updates/deletion and additional formats require explicit tests.

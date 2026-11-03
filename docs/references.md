@@ -2,6 +2,8 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 
+[Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
+
 References were checked on **2 November 2026**. These are primary public sources for further reading, not proof of laboratory validation, support certification or business results. Pages labelled `latest` may change and describe features or defaults absent from this adapted pilot. Consult version-matched vendor material when building a tested bill of materials.
 
 ## EXT-01 — NVIDIA RAG Blueprint

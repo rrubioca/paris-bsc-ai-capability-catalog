@@ -2,6 +2,8 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 
+[Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
+
 These stable references describe the adapted pilot. A source review verifies that a configuration or implementation exists; it does not prove successful execution. See the [evidence ledger](validation.md) for the scope of each finding.
 
 ## TC-01 — Document ingestion

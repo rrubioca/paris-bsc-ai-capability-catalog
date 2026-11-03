@@ -2,7 +2,9 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 
-**Verified runtime demonstrations supported by a reviewed public evidence pack: none at initial publication.** The source-derived workflow below can be explained as a documentation walkthrough. Historical functional reports are preserved as reports, not promoted into validated current results. No vertical-specific scenario is validated.
+[Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
+
+**Verified runtime demonstrations supported by a reviewed public evidence pack: none at initial publication.** The source-derived workflow below can be explained as a documentation walkthrough. Historical functional reports are preserved as reports, not promoted into validated current results. No vertical-specific scenario is validated. See the [technical vertical assessment](validation.md#vertical-assessment-and-business-use-case-boundaries) for the scope behind the commercial use cases.
 
 ## DEMO-01 — Document-grounded question answering
 

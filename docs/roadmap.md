@@ -6,7 +6,7 @@
 >
 > The existing RAG pilot retains its separate status: **UNDER VALIDATION — PARIS BSC LABORATORY**.
 
-[Catalog home](../README.md) · [Current pilot evidence](validation.md) · [Publication boundary](../SECURITY.md)
+[Catalog home](../README.md) · [Navigation guide](navigation.md) · [Current pilot evidence](validation.md) · [Publication boundary](../SECURITY.md)
 
 ## Purpose and status
 

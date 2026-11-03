@@ -2,6 +2,8 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 
+[Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
+
 This is a **pilot evidence matrix**, not a certified bill of materials or vendor support statement. Source snapshot: 2 November 2026, engineering commit `2052f67997ee795dd0293ed6b84e9a3f849a592d`. A configured version does not prove that a matching container or model ran successfully.
 
 | Layer / component | Reviewed configuration or historical context | Verified scope | Missing verification / limitation |

@@ -4,6 +4,8 @@
 >
 > First publication: 2 November 2026. One pilot entry. No completed Paris BSC demonstration is certified by this publication.
 
+**Navigation:** [Current pilot and evidence](#technical-architecture-and-validation) · [Roadmap — planned work](docs/roadmap.md) · [Business use cases](#business-use-cases-verticals-and-customer-value)
+
 ## Executive summary
 
 This English-language catalog helps TD SYNNEX and partner sales teams connect customer needs to the technical work being evaluated at the Paris Business Solution Center (BSC). Technical readers can follow the same opportunities into architecture, compatibility, evidence and limitations.
@@ -49,10 +51,15 @@ Use this catalog now for an architecture and discovery discussion. Any live labo
 
 Bring a non-sensitive corpus proposal, business sponsor, representative questions and success criteria. Before presenting a live result externally, require the matching revision, environment bill of materials, sanitized evidence and technical review described in the [validation ledger](docs/validation.md). A documentation walkthrough must be introduced as a walkthrough. No end-to-end demo, customer pilot or production deployment is promised by this publication.
 
+## Roadmap
+
+The [Roadmap](docs/roadmap.md) describes future work for Cisco, partners and TD SYNNEX, separately from catalog capabilities and verified evidence. **RM-001 — Agent Security Demonstration — OpenClaw / Cisco DefenseClaw / NVIDIA NemoClaw & OpenShell / Cisco AI Defense SaaS** is **PLANNED**. Its four phases cover the official Cisco lab, BSC platform evaluation, SaaS integration and a **private internal BSC Stack Automation blueprint**. No agent-security deployment, compatibility or blocking result is claimed. The private blueprint and operational code will not be published in this catalog.
+
 ## Technical architecture and validation
 
 | Read next | Purpose |
 |---|---|
+| [Roadmap](docs/roadmap.md) | Planned projects, dependencies and acceptance gates; separate from verified capabilities |
 | [Technical capabilities](docs/capabilities.md) | Stable TC references and evidence boundaries |
 | [Logical architecture and topologies](docs/architecture.md) | Functional data flow, deployment flow and dependencies with opaque logical labels |
 | [Compatibility and component matrix](docs/compatibility.md) | Configured versions versus verified runtime versions |

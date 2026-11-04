@@ -1,0 +1,61 @@
+---
+import { fileURLToPath } from 'node:url';
+import { buildCatalog, readPublicSources } from '../lib/content.mjs';
+import { base, pageUrl } from '../lib/manifest.mjs';
+const root = fileURLToPath(new URL('../../../', import.meta.url));
+const { records } = buildCatalog(await readPublicSources(root));
+const entries = records.filter(record => record.type !== 'reference');
+const types = [...new Set(entries.map(record => record.type))].sort();
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Explore | Paris BSC</title>
+<meta name="description" content="Explore public Paris BSC capabilities, demonstrations and evidence linked to their authoritative source."/>
+<style>
+:root{font-family:system-ui,sans-serif;color:#1c3040;background:#f4f7fa}
+*{box-sizing:border-box}body{margin:0}
+header{background:#142e45;color:white;padding:1rem max(1rem,calc((100vw - 1160px)/2));display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+header a{color:#bde8ff}main{max-width:1160px;padding:2rem 1rem;margin:auto}
+h1{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.04em}
+.intro{max-width:75ch;line-height:1.55;color:#526779}
+.controls{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.6rem 0}
+input,select{font:inherit;border:1px solid #aebfcd;border-radius:.6rem;padding:.8rem;background:white;color:#183145}
+input{flex:2 1 250px}select{flex:1 1 190px}
+#count{color:#526779}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:1rem}
+article{background:white;border:1px solid #d6e1e9;border-radius:.8rem;padding:1.3rem;display:flex;flex-direction:column;gap:.65rem}
+.kind{font-size:.73rem;color:#18629a;letter-spacing:.08em;font-weight:800;text-transform:uppercase}
+h2{font-size:1.07rem;line-height:1.38;margin:0}.meta{font-size:.84rem;color:#536a7c}
+.state{background:#edf2f6;padding:.5rem;border-radius:.4rem;font-size:.85rem}
+article a{margin-top:auto;color:#075d99;font-weight:650}
+[hidden]{display:none!important} :focus-visible{outline:3px solid #238bd2;outline-offset:3px}
+</style>
+</head>
+<body>
+<header><strong>Paris BSC · Capability Explorer</strong><a href={pageUrl('catalog',base)}>Full catalog</a></header>
+<main>
+<h1>Explore capabilities and evidence</h1>
+<p class="intro">This view is generated from the original public Markdown, not a second catalog. Status labels are quoted from their authoritative records and do not imply deployment readiness.</p>
+<div class="controls">
+<input id="query" type="search" placeholder="Search title or record ID" aria-label="Search records"/>
+<select id="type" aria-label="Filter record type"><option value="">All record types</option>{types.map(type=><option value={type}>{type}</option>)}</select>
+</div>
+<p id="count" role="status" aria-live="polite">{entries.length} records</p>
+<section class="grid" aria-label="Catalog records">
+{entries.map(record=><article data-type={record.type} data-search={`${record.id} ${record.title}`.toLowerCase()}>
+<span class="kind">{record.type}</span><h2>{record.title}</h2>
+<span class="meta">{record.id}{record.solutionId ? ` · ${record.solutionId}` : ''}</span>
+{record.status && <span class="state">{record.status.domain}: {record.status.label}</span>}
+<a href={record.href}>View source record</a>
+</article>)}
+</section>
+</main>
+<script>
+const input=document.querySelector('#query'),select=document.querySelector('#type');
+const cards=[...document.querySelectorAll('.grid article')],counter=document.querySelector('#count');
+function filter(){let n=0;const q=input.value.trim().toLowerCase();for(const c of cards){const show=(!q||c.dataset.search.includes(q))&&(!select.value||c.dataset.type===select.value);c.hidden=!show;if(show)n++}counter.textContent=`${n} of ${cards.length} records`}
+input.addEventListener('input',filter);select.addEventListener('change',filter);
+</script>
+</body>
+</html>

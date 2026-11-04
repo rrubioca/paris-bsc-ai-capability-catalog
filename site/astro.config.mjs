@@ -19,6 +19,7 @@ export default defineConfig({
     locales: { root: { label: 'English', lang: 'en' } },
     sidebar: [
       { label: 'Catalog', slug: 'catalog' },
+      { label: 'Explore records', link: base + '/explore/' },
       { label: 'Documentation', items: documentation },
       { label: 'Contributing', slug: 'contributing' },
       { label: 'Security', slug: 'security' }

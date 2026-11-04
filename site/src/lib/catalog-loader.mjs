@@ -50,7 +50,6 @@ export function catalogLoader() {
           } });
           context.store.set({
             id: doc.route, data, body,
-            filePath: path.join(repoRoot, doc.path),
             digest: context.generateDigest(body),
             rendered: await context.renderMarkdown(body)
           });

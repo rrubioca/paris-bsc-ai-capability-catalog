@@ -41,10 +41,11 @@ article a{margin-top:auto;color:#075d99;font-weight:650}
 <input id="query" type="search" placeholder="Search title or record ID" aria-label="Search records"/>
 <select id="type" aria-label="Filter record type"><option value="">All record types</option>{types.map(type=><option value={type}>{type}</option>)}</select>
 <select id="solution" aria-label="Filter by solution"><option value="">All solutions</option>{solutions.map(solution=><option value={solution.id}>{solution.title}</option>)}</select>
+<select id="domain" aria-label="Filter by status domain"><option value="">All status domains</option>{statusDomains.map(domain=><option value={domain}>{domain}</option>)}</select>
 </div>
 <div class="share"><p id="count" role="status" aria-live="polite">{entries.length} records</p><button id="share" type="button" aria-label="Copy filtered catalog link">Copy filtered link</button><span id="copy-status" role="status" aria-live="polite"></span></div>
 <section class="grid" aria-label="Catalog records">
-{entries.map(record=><article data-type={record.type} data-solution={record.solutionId || (record.type === 'solution' ? record.id : '')} data-search={`${record.id} ${record.title}`.toLowerCase()}>
+{entries.map(record=><article data-type={record.type} data-domain={record.status?.domain || ''} data-solution={record.solutionId || (record.type === 'solution' ? record.id : '')} data-search={`${record.id} ${record.title}`.toLowerCase()}>
 <span class="kind">{record.type}</span><h2>{record.title}</h2>
 <span class="meta">{record.id}{record.solutionId ? ` · ${record.solutionId}` : ''}</span>
 {record.status && <span class="state">{record.status.domain}: {record.status.label}</span>}
@@ -53,25 +54,28 @@ article a{margin-top:auto;color:#075d99;font-weight:650}
 </section>
 </main>
 <script>
-const input=document.querySelector('#query'),select=document.querySelector('#type'),solution=document.querySelector('#solution');
+const input=document.querySelector('#query'),select=document.querySelector('#type'),solution=document.querySelector('#solution'),domain=document.querySelector('#domain');
 const cards=[...document.querySelectorAll('.grid article')],counter=document.querySelector('#count');
-function filter(){let n=0;const q=input.value.trim().toLowerCase();for(const c of cards){const show=(!q||c.dataset.search.includes(q))&&(!select.value||c.dataset.type===select.value)&&(!solution.value||c.dataset.solution===solution.value);c.hidden=!show;if(show)n++}counter.textContent=`${n} of ${cards.length} records`}
+function filter(){let n=0;const q=input.value.trim().toLowerCase();for(const c of cards){const show=(!q||c.dataset.search.includes(q))&&(!select.value||c.dataset.type===select.value)&&(!solution.value||c.dataset.solution===solution.value)&&(!domain.value||c.dataset.domain===domain.value);c.hidden=!show;if(show)n++}counter.textContent=`${n} of ${cards.length} records`}
 const params=new URLSearchParams(location.search);
 input.value=(params.get('q')||'').slice(0,120);
 const requestedType=params.get('type')||'';
 const requestedSolution=params.get('solution')||'';
+const requestedDomain=params.get('domain')||'';
 if([...select.options].some(o=>o.value===requestedType)) select.value=requestedType;
 if([...solution.options].some(o=>o.value===requestedSolution)) solution.value=requestedSolution;
+if([...domain.options].some(o=>o.value===requestedDomain)) domain.value=requestedDomain;
 function update(){
   filter();
   const next=new URLSearchParams();
   if(input.value.trim()) next.set('q',input.value.trim().slice(0,120));
   if(select.value) next.set('type',select.value);
   if(solution.value) next.set('solution',solution.value);
+  if(domain.value) next.set('domain',domain.value);
   const query=next.toString();
   history.replaceState(null,'',location.pathname+(query?'?'+query:''));
 }
-input.addEventListener('input',update);select.addEventListener('change',update);solution.addEventListener('change',update);
+input.addEventListener('input',update);select.addEventListener('change',update);solution.addEventListener('change',update);domain.addEventListener('change',update);
 filter();
 const share=document.querySelector('#share'),copyStatus=document.querySelector('#copy-status');
 share.addEventListener('click',async()=>{

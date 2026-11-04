@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { base, pageUrl } from '../lib/manifest.mjs';
-const entries = records.filter(record => record.type !== 'reference');
+const entries = (await getCollection('catalog')).map(entry => entry.data).filter(record => record.type !== 'reference');
 const types = [...new Set(entries.map(record => record.type))].sort();
 ---
 <!doctype html>

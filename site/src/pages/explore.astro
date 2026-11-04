@@ -1,9 +1,6 @@
 ---
-import { fileURLToPath } from 'node:url';
-import { buildCatalog, readPublicSources } from '../lib/content.mjs';
+import { getCollection } from 'astro:content';
 import { base, pageUrl } from '../lib/manifest.mjs';
-const root = fileURLToPath(new URL('../../../', import.meta.url));
-const { records } = buildCatalog(await readPublicSources(root));
 const entries = records.filter(record => record.type !== 'reference');
 const types = [...new Set(entries.map(record => record.type))].sort();
 ---

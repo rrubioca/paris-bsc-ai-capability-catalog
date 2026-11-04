@@ -19,6 +19,7 @@ header a{color:#bde8ff}main{max-width:1160px;padding:2rem 1rem;margin:auto}
 h1{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.04em}
 .intro{max-width:75ch;line-height:1.55;color:#526779}
 .controls{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.6rem 0}
+.share{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}.share button{border:1px solid #17669a;border-radius:.55rem;background:#fff;color:#075d99;font:inherit;padding:.6rem .85rem;cursor:pointer}.share button:hover{background:#e6f2fa}#copy-status{font-size:.85rem;color:#365566}
 input,select{font:inherit;border:1px solid #aebfcd;border-radius:.6rem;padding:.8rem;background:white;color:#183145}
 input{flex:2 1 250px}select{flex:1 1 190px}
 #count{color:#526779}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:1rem}
@@ -40,7 +41,7 @@ article a{margin-top:auto;color:#075d99;font-weight:650}
 <select id="type" aria-label="Filter record type"><option value="">All record types</option>{types.map(type=><option value={type}>{type}</option>)}</select>
 <select id="solution" aria-label="Filter by solution"><option value="">All solutions</option>{solutions.map(solution=><option value={solution.id}>{solution.title}</option>)}</select>
 </div>
-<p id="count" role="status" aria-live="polite">{entries.length} records</p>
+<div class="share"><p id="count" role="status" aria-live="polite">{entries.length} records</p><button id="share" type="button" aria-label="Copy filtered catalog link">Copy filtered link</button><span id="copy-status" role="status" aria-live="polite"></span></div>
 <section class="grid" aria-label="Catalog records">
 {entries.map(record=><article data-type={record.type} data-solution={record.solutionId || (record.type === 'solution' ? record.id : '')} data-search={`${record.id} ${record.title}`.toLowerCase()}>
 <span class="kind">{record.type}</span><h2>{record.title}</h2>
@@ -71,6 +72,15 @@ function update(){
 }
 input.addEventListener('input',update);select.addEventListener('change',update);solution.addEventListener('change',update);
 filter();
+const share=document.querySelector('#share'),copyStatus=document.querySelector('#copy-status');
+share.addEventListener('click',async()=>{
+  try{
+    await navigator.clipboard.writeText(location.href);
+    copyStatus.textContent='Link copied';
+  }catch{
+    copyStatus.textContent='Copy the URL from your browser address bar';
+  }
+});
 </script>
 </body>
 </html>

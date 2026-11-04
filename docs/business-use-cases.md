@@ -14,6 +14,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 
 **Use case: UC-01**
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 **Problem and audience:** operations and enablement teams need to locate the current approved policy or product rule in a large document set. The potential value is less effort navigating documents and more consistent source checking. The economic buyer could be an operations leader, supported by knowledge management and IT.
 
 **Discovery:** who owns the authoritative version? Which staff may see each policy? How are superseded documents removed? Is the expected answer a passage lookup or an interpretation that requires a specialist? Who approves the initial scope?
@@ -25,6 +27,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 ## Manufacturing — maintenance and technical documentation
 
 **Use case: UC-02**
+
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
 
 **Problem and audience:** service engineers search manuals, revisions and maintenance guidance for a specific product. Potential value is quicker identification of the applicable source, with engineers retaining responsibility for the procedure. A service engineering or after-sales leader is a plausible sponsor.
 
@@ -38,6 +42,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 
 **Use case: UC-03**
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 **Problem and audience:** administrative staff navigate approved operational procedures and staff guidance. Potential value is easier access to the relevant source. Administration and IT could sponsor a bounded knowledge-access evaluation.
 
 **Discovery:** which administrative task should the evaluation address? Which procedure owner reviews answers? How are clinical questions referred to qualified staff? Who approves the content and evaluation scope?
@@ -49,6 +55,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 ## Public sector — policy and guidance navigation
 
 **Use case: UC-04**
+
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
 
 **Problem and audience:** staff need to find applicable published guidance across document collections. Potential value is a clearer route to authoritative material; service delivery and digital transformation teams are potential sponsors.
 
@@ -62,6 +70,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 
 **Use case: UC-05**
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 **Problem and audience:** sales and support teams search product specifications and support documents. Potential value is easier source lookup during an interaction. Support operations or sales enablement could own an evaluation.
 
 **Discovery:** how frequently do specifications change? Are prices, stock and customer contracts outside the corpus? Which product attributes must never be inferred? Who approves answers before they are reused externally?
@@ -73,6 +83,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 ## IT services — runbooks and platform enablement
 
 **Use case: UC-06**
+
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
 
 **Problem and audience:** service engineers need to find approved troubleshooting guidance; platform teams also need to understand the dependencies of an AI application. Potential value is clearer knowledge navigation and a better-scoped deployment service. Service delivery and platform engineering are potential sponsors.
 
@@ -90,6 +102,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 
 **Use case: UC-07**
 
+**Catalog entry:** [SAIF-AI-002](demo-overview.md#vss-at-a-glance).
+
 **Problem and audience:** operations teams review industrial recordings to find relevant events. Potential value is less manual review effort and easier access to information for operational investigation.
 
 **Discovery:** which event or process needs reviewing? Who interprets the recording and owns the resulting action?
@@ -101,6 +115,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 ## Retail incident review
 
 **Use case: UC-08**
+
+**Catalog entry:** [SAIF-AI-002](demo-overview.md#vss-at-a-glance).
 
 **Problem and audience:** retail operations teams need to locate relevant moments in recorded video. Potential value is a more focused incident-review conversation.
 
@@ -114,6 +130,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 
 **Use case: UC-09**
 
+**Catalog entry:** [SAIF-AI-002](demo-overview.md#vss-at-a-glance).
+
 **Problem and audience:** warehouse and distribution teams review recordings to understand operational events. Potential value is easier navigation to relevant information during process investigation.
 
 **Discovery:** which operational event should the team find? How is video review used in the current investigation process?
@@ -126,6 +144,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 
 **Use case: UC-10**
 
+**Catalog entry:** [SAIF-AI-002](demo-overview.md#vss-at-a-glance).
+
 **Problem and audience:** facilities teams need a practical way to review recordings across their activities. Potential value is less effort finding relevant events and communicating what happened.
 
 **Discovery:** which facility activity or event requires review? Who needs the summary and what information should it contain?
@@ -137,6 +157,8 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 ## Enterprise security investigations
 
 **Use case: UC-11**
+
+**Catalog entry:** [SAIF-AI-002](demo-overview.md#vss-at-a-glance).
 
 **Problem and audience:** security teams review footage to understand recorded events. Potential value is more focused information finding in support of human-led investigation.
 

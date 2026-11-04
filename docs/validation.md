@@ -21,6 +21,8 @@ These states apply to specific claims, not blanket readiness. Engineering metada
 
 ## Source and test status matrix
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 | ID | Check | State | Actual finding | Required next evidence |
 |---|---|---|---|---|
 | VAL-01 | Adapted blueprint provenance | SOURCE VERIFIED | Engineering revision v0.3.0 and commit inspected | Confirm exact deployed revision for each runtime result |
@@ -57,17 +59,23 @@ Technical qualification must assess identity/document authorization, transport, 
 
 ## EVD-RAG-001 — Functional RAG evidence
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 **Record status: evidence pending.** The record ID is a stable reference, not an existing attachment or successful result. Historical reports of ingestion, retrieval and inference cannot establish current-revision compatibility, accuracy or repeatability. No screenshots, transcripts, test corpus or technical sign-off were recovered for publication.
 
 To complete this record, attach a sanitized corpus description, expected questions, observed ingestion and answer results, exact configuration identifiers, run date, errors and technical review. Exclude all private operational identifiers and document content without disclosure permission.
 
 ## EVD-SA-001 — Deployment and lifecycle evidence
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 **Record status: source review available; runtime evidence pending.** The reviewed definition establishes intended sequencing and configuration. It does not establish a successful deployment of v0.3.0 or repeated automated application of the proxy correction.
 
 To complete this record, document executed stages and outcomes, remaining manual steps, exact deployed configuration, repeat-deployment outcome, failure behavior and a sanitized technical review. Keep operational records in the restricted engineering evidence store; publish only approved summaries.
 
 ## EVD-PVC-001 — Storage lifecycle evidence
+
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
 
 **Record status: implementation and test definitions reviewed; execution evidence pending.** Storage deletion is the v0.3.0 blueprint default for eligible unused environment storage. Retention and audit-only logic exist, but live behavior, application-consistent backup/restore and backend reclamation are not established by the reviewed source.
 
@@ -81,6 +89,8 @@ Update TC, DEMO, compatibility, limitations and business references together. A 
 
 
 ## EVD-VSS-001 — Video intelligence demonstration evidence
+
+**Catalog entry:** [SAIF-AI-002](demo-overview.md#vss-at-a-glance).
 
 **Record status: owner-confirmed validated demonstration; public evidence links awaiting approved publication assets.** This is the evidence record for **SAIF-AI-002 / DEMO-03**, separate from the RAG records above. Recorded functional demonstrations and prior OpenShift workload validation were confirmed by the catalog owner in the approved working context. No live environment test or independent video replay was performed for this documentation update on **4 November 2026**.
 

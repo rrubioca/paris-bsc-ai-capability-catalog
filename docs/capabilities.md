@@ -10,6 +10,8 @@ TC-01–TC-04 describe SAIF-AI-001 (RAG); TC-05 describes SAIF-AI-002 (VSS). Sta
 
 ## TC-01 — Document ingestion
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 **Purpose:** prepare document content for retrieval. Earlier working context reports PDF ingestion in the laboratory. The reviewed deployment definition describes document ingestion, but includes no sanitized input corpus, successful ingestion transcript or deployed parser inventory.
 
 **Status:** historically reported functional; current runtime validation pending. Supported formats beyond the reported PDF example, scanned-PDF handling, OCR, tables, multilingual handling, maximum sizes and update/delete behavior are unverified.
@@ -17,6 +19,8 @@ TC-01–TC-04 describe SAIF-AI-001 (RAG); TC-05 describes SAIF-AI-002 (VSS). Sta
 **Links:** [DEMO-01](demonstrations.md#demo-01--document-grounded-question-answering), [EVD-RAG-001](validation.md#evd-rag-001--functional-rag-evidence), [EXT-01](references.md#ext-01--nvidia-rag-blueprint).
 
 ## TC-02 — Retrieval and contextual grounding
+
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
 
 **Purpose:** use document-derived context when generating an answer. The engineering definition specifies a chain server and Milvus vector database; earlier context reports relevant retrieval and grounded answers. The exact runtime retrieval settings and answer-to-source behavior have not been evidenced for publication.
 
@@ -26,6 +30,8 @@ TC-01–TC-04 describe SAIF-AI-001 (RAG); TC-05 describes SAIF-AI-002 (VSS). Sta
 
 ## TC-03 — Blackwell-targeted inference
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 **Purpose:** run the pilot's NVIDIA inference components on the RTX PRO 6000 Blackwell target. Source specifies an LLM NIM, embedding NIM and reranking NIM, allocating one GPU to each on a selected GPU worker. The configured LLM is Llama 3.1 8B Instruct and its NIM image override is 2.1.4. These are configuration facts, not a verified runtime inventory.
 
 **Status:** Blackwell adaptation verified in source; inference historically reported; exact driver, CUDA/runtime, selected model profiles, image digests and all-component GPU compatibility remain unverified. Four GPUs reported in the earlier context do not imply four GPUs used by this three-GPU configuration.
@@ -33,6 +39,8 @@ TC-01–TC-04 describe SAIF-AI-001 (RAG); TC-05 describes SAIF-AI-002 (VSS). Sta
 **Links:** [DEMO-01](demonstrations.md#demo-01--document-grounded-question-answering), [compatibility matrix](compatibility.md), [EXT-03](references.md#ext-03--nvidia-rtx-pro-6000-blackwell-server-edition).
 
 ## TC-04 — Cisco Stack Automation application workflow
+
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
 
 **Purpose:** express dependencies for GPU preflight, credential preparation, Helm application deployment, optional authenticated presentation and a post-deployment proxy correction. Source revision v0.3.0 also defines storage cleanup at termination.
 

@@ -17,3 +17,10 @@ raw-evidence/
 diagnostics/
 .DS_Store
 Thumbs.db
+
+# Local portal tooling and generated output; source documentation stays in docs/.
+site/node_modules/
+site/.astro/
+site/dist/
+site/.reports/
+site/.cache/

@@ -6,6 +6,8 @@
 
 ## Start here
 
+**[Open the web catalog](https://rrubioca.github.io/paris-bsc-ai-capability-catalog/)** — browser-based review of the same repository content, with navigation and full-text search.
+
 | Your goal | Start with | Continue to |
 |---|---|---|
 | **Sales / business:** understand the opportunity and position it with customers | [Demonstration overview](docs/demo-overview.md) | [Use cases and qualification](docs/business-use-cases.md) |

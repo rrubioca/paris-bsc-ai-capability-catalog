@@ -10,6 +10,8 @@
 
 ## DEMO-01 — Document-grounded question answering
 
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
+
 | Field | Record |
 |---|---|
 | Business purpose | Evaluate answering questions against an approved document collection |
@@ -32,6 +34,8 @@
 This is a proposed validation procedure, not a record of steps executed. Performance, accuracy, document permissions, regulated-data suitability and customer benefit remain outside any proven result here.
 
 ## DEMO-02 — Deployment and lifecycle walkthrough
+
+**Catalog entry:** [SAIF-AI-001](demo-overview.md#at-a-glance).
 
 | Field | Record |
 |---|---|

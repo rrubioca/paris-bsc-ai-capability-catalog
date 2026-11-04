@@ -91,6 +91,8 @@ NVIDIA's current [OpenShift guide](https://docs.nvidia.com/openshell/kubernetes/
 
 ## RM-002 project
 
+**Catalog entry:** [SAIF-AI-002](demo-overview.md#vss-at-a-glance).
+
 **Private Cisco Stack Automation Blueprint for NVIDIA VSS — SAIF-AI-002**
 
 **Status: PLANNED.** Extend the [validated VSS demonstration](demonstrations.md#demo-03--from-video-to-insight) with repeatable internal BSC deployment and lifecycle management. Existing operational start/stop automation is a starting point; it is not evidence of an accepted Stack Automation deployment.

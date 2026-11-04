@@ -8,6 +8,14 @@ This repository publishes English-language capability documentation. Application
 
 ## Scope and structure
 
+### Public portal tooling
+
+The `site/` directory may contain frontend code, local validation tools and a dependency lockfile for presenting this repository's public content. This exception does not allow laboratory application code, deployable blueprints, operational scripts, private configuration or raw evidence. Markdown under the existing root and `docs/` remains the editorial source; do not author a second copy in the portal. See `site/README.md` for the portal content and editorial contract before changing its adapter or publication allowlist. The catalog website workflow checks pull requests and publishes verified pushes to `main` to GitHub Pages.
+
+Ambiguous UC, TC, DEMO, VAL and EVD records must identify their catalog entry with a stable `SAIF-AI` reference. Keep original paths and heading anchors stable. Commercial editing forms must write to the original approved fields; they must not maintain separate descriptions or validation states. Structural checks do not replace technical or disclosure review.
+
+### Catalog content
+
 The catalog includes SAIF-AI-001, the NVIDIA RAG pilot adapted for RTX PRO 6000 Blackwell through Cisco Stack Automation, and SAIF-AI-002, the validated NVIDIA VSS demonstration. Track each entry's status and evidence separately; do not add other catalog entries under either entry's evidence. A future Hyperfabric entry requires a separate scope and its own validation records.
 
 Keep executive and business content ahead of architecture and technical details. Maintain stable TC, DEMO, EVD and EXT identifiers. Each business use case must link to enabling technical capabilities, the actual demonstration/evidence status and primary external documentation. Label potential vertical applications separately from tested demonstrations.

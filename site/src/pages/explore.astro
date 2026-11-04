@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { base, pageUrl } from '../lib/manifest.mjs';
 const entries = (await getCollection('catalog')).map(entry => entry.data).filter(record => record.type !== 'reference');
 const types = [...new Set(entries.map(record => record.type))].sort();
+const solutions = entries.filter(record => record.type === 'solution').map(record => ({ id: record.id, title: record.title }));
 ---
 <!doctype html>
 <html lang="en">
@@ -37,10 +38,11 @@ article a{margin-top:auto;color:#075d99;font-weight:650}
 <div class="controls">
 <input id="query" type="search" placeholder="Search title or record ID" aria-label="Search records"/>
 <select id="type" aria-label="Filter record type"><option value="">All record types</option>{types.map(type=><option value={type}>{type}</option>)}</select>
+<select id="solution" aria-label="Filter by solution"><option value="">All solutions</option>{solutions.map(solution=><option value={solution.id}>{solution.title}</option>)}</select>
 </div>
 <p id="count" role="status" aria-live="polite">{entries.length} records</p>
 <section class="grid" aria-label="Catalog records">
-{entries.map(record=><article data-type={record.type} data-search={`${record.id} ${record.title}`.toLowerCase()}>
+{entries.map(record=><article data-type={record.type} data-solution={record.solutionId || (record.type === 'solution' ? record.id : '')} data-search={`${record.id} ${record.title}`.toLowerCase()}>
 <span class="kind">{record.type}</span><h2>{record.title}</h2>
 <span class="meta">{record.id}{record.solutionId ? ` · ${record.solutionId}` : ''}</span>
 {record.status && <span class="state">{record.status.domain}: {record.status.label}</span>}
@@ -49,10 +51,10 @@ article a{margin-top:auto;color:#075d99;font-weight:650}
 </section>
 </main>
 <script>
-const input=document.querySelector('#query'),select=document.querySelector('#type');
+const input=document.querySelector('#query'),select=document.querySelector('#type'),solution=document.querySelector('#solution');
 const cards=[...document.querySelectorAll('.grid article')],counter=document.querySelector('#count');
-function filter(){let n=0;const q=input.value.trim().toLowerCase();for(const c of cards){const show=(!q||c.dataset.search.includes(q))&&(!select.value||c.dataset.type===select.value);c.hidden=!show;if(show)n++}counter.textContent=`${n} of ${cards.length} records`}
-input.addEventListener('input',filter);select.addEventListener('change',filter);
+function filter(){let n=0;const q=input.value.trim().toLowerCase();for(const c of cards){const show=(!q||c.dataset.search.includes(q))&&(!select.value||c.dataset.type===select.value)&&(!solution.value||c.dataset.solution===solution.value);c.hidden=!show;if(show)n++}counter.textContent=`${n} of ${cards.length} records`}
+input.addEventListener('input',filter);select.addEventListener('change',filter);solution.addEventListener('change',filter);
 </script>
 </body>
 </html>

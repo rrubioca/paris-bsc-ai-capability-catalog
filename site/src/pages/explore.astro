@@ -44,6 +44,7 @@ article a{margin-top:auto;color:#075d99;font-weight:650}
 <select id="domain" aria-label="Filter by status domain"><option value="">All status domains</option>{statusDomains.map(domain=><option value={domain}>{domain}</option>)}</select>
 </div>
 <div class="share"><p id="count" role="status" aria-live="polite">{entries.length} records</p><button id="share" type="button" aria-label="Copy filtered catalog link">Copy filtered link</button><span id="copy-status" role="status" aria-live="polite"></span></div>
+<p id="empty" role="status" hidden>No records match these filters. Try changing or clearing your selection.</p>
 <section class="grid" aria-label="Catalog records">
 {entries.map(record=><article data-type={record.type} data-domain={record.status?.domain || ''} data-solution={record.solutionId || (record.type === 'solution' ? record.id : '')} data-search={`${record.id} ${record.title}`.toLowerCase()}>
 <span class="kind">{record.type}</span><h2>{record.title}</h2>
@@ -56,7 +57,7 @@ article a{margin-top:auto;color:#075d99;font-weight:650}
 <script>
 const input=document.querySelector('#query'),select=document.querySelector('#type'),solution=document.querySelector('#solution'),domain=document.querySelector('#domain');
 const cards=[...document.querySelectorAll('.grid article')],counter=document.querySelector('#count');
-function filter(){let n=0;const q=input.value.trim().toLowerCase();for(const c of cards){const show=(!q||c.dataset.search.includes(q))&&(!select.value||c.dataset.type===select.value)&&(!solution.value||c.dataset.solution===solution.value)&&(!domain.value||c.dataset.domain===domain.value);c.hidden=!show;if(show)n++}counter.textContent=`${n} of ${cards.length} records`}
+function filter(){let n=0;const q=input.value.trim().toLowerCase();for(const c of cards){const show=(!q||c.dataset.search.includes(q))&&(!select.value||c.dataset.type===select.value)&&(!solution.value||c.dataset.solution===solution.value)&&(!domain.value||c.dataset.domain===domain.value);c.hidden=!show;if(show)n++}counter.textContent=`${n} of ${cards.length} records`;document.querySelector('#empty').hidden=n!==0}
 const params=new URLSearchParams(location.search);
 input.value=(params.get('q')||'').slice(0,120);
 const requestedType=params.get('type')||'';

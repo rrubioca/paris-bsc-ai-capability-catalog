@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { base, pageUrl } from '../lib/manifest.mjs';
 const entries = (await getCollection('catalog')).map(entry => entry.data).filter(record => record.type !== 'reference');
 const types = [...new Set(entries.map(record => record.type))].sort();
+const statusDomains = [...new Set(entries.filter(record => record.status).map(record => record.status.domain))].sort();
 const solutions = entries.filter(record => record.type === 'solution').map(record => ({ id: record.id, title: record.title }));
 ---
 <!doctype html>

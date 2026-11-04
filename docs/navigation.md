@@ -1,12 +1,14 @@
 # Navigation guide
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Demonstration overview](demo-overview.md) · [Business use cases](business-use-cases.md) · [Architecture and diagrams](architecture.md) · [Roadmap](roadmap.md)
 
 ## Commercial and business path
 
-1. **Understand the story:** read the [executive summary](../README.md#executive-summary), then the [demonstration overview](demo-overview.md) for the purpose, experience and conversation scope.
+1. **Understand the story:** read the [executive summary](../README.md#executive-summary), then [choose RAG or VSS in the demonstration overview](demo-overview.md#choose-a-demonstration) for the purpose, experience and conversation scope.
 2. **Match an opportunity:** use the [business playbook](business-use-cases.md) to choose a vertical, sponsor and information task. Each opportunity links to the relevant technical capability, demonstration record and external reference.
 3. **Prepare engagement:** agree the objective and success criteria, then confirm the BSC session scope. Bring technical presales into the [technical path](#technical-and-presales-path) for platform and evidence questions.
 
@@ -15,7 +17,7 @@ The common pilot status stays visible in commercial pages. Detailed dataset cove
 ## Technical and presales path
 
 1. **Understand the design:** start with [architecture](architecture.md). The [application diagram](architecture.md#application-and-data-flow) explains the RAG flow; the [automation diagram](architecture.md#automation-and-control-dependencies) explains deployment and lifecycle dependencies.
-2. **Inspect the intended demonstration:** open [DEMO-01](demonstrations.md#demo-01--document-grounded-question-answering) for document Q&A or [DEMO-02](demonstrations.md#demo-02--deployment-and-lifecycle-walkthrough) for the deployment walkthrough. Follow their capability and evidence links.
+2. **Inspect the intended demonstration:** open [DEMO-01](demonstrations.md#demo-01--document-grounded-question-answering) for document Q&A or [DEMO-02](demonstrations.md#demo-02--deployment-and-lifecycle-walkthrough) for the RAG deployment walkthrough; use [DEMO-03](demonstrations.md#demo-03--from-video-to-insight) for VSS video intelligence. Follow their capability and evidence links.
 3. **Assess platform fit:** review [compatibility](compatibility.md), [capabilities](capabilities.md), [provenance](provenance.md) and [limitations](limitations.md).
 4. **Check what is established:** read the [validation matrix](validation.md#source-and-test-status-matrix), [vertical assessment](validation.md#vertical-assessment-and-business-use-case-boundaries) and relevant EVD record. Proposed procedures and check IDs are not executed tests or pass results.
 
@@ -60,16 +62,18 @@ Identifiers are stable cross-references. Their number identifies a record; it do
 
 | Prefix and format | Object and scope | Current records | Where it lives |
 |---|---|---|---|
-| SAIF-AI-NNN | Catalog solution/pilot; three-digit sequence | SAIF-AI-001 | [README](../README.md#executive-summary) and [overview](demo-overview.md) |
-| UC-NN | Business opportunity; two-digit sequence across the catalog | UC-01–UC-06 | [Business playbook](business-use-cases.md) |
-| TC-NN | Technical capability; two-digit sequence across the catalog | TC-01–TC-04 | [Capability registry](capabilities.md) |
-| DEMO-NN | Demonstration or walkthrough record; two-digit sequence across the catalog | DEMO-01–DEMO-02 | [Demonstration records](demonstrations.md) |
+| SAIF-AI-NNN | Catalog solution/pilot; three-digit sequence | SAIF-AI-001–SAIF-AI-002 | [README](../README.md#executive-summary) and [overview](demo-overview.md) |
+| UC-NN | Business opportunity; two-digit sequence across the catalog | UC-01–UC-11 | [Business playbook](business-use-cases.md) |
+| TC-NN | Technical capability; two-digit sequence across the catalog | TC-01–TC-05 | [Capability registry](capabilities.md) |
+| DEMO-NN | Demonstration or walkthrough record; two-digit sequence across the catalog | DEMO-01–DEMO-03 | [Demonstration records](demonstrations.md) |
 | VAL-NN | Validation check/assessment; two-digit sequence across the catalog | VAL-01–VAL-12 | [Validation matrix](validation.md#source-and-test-status-matrix) |
-| EVD-TOPIC-NNN | Evidence record grouped by topic; three-digit sequence within each topic | EVD-RAG-001, EVD-SA-001, EVD-PVC-001 | [Evidence ledger](validation.md) |
-| EXT-NN | External documentation reference; two-digit sequence across the catalog | EXT-01–EXT-06 | [Reference registry](references.md) |
-| RM-NNN | Roadmap project; three-digit sequence across the catalog | RM-001 | [Roadmap](roadmap.md) |
+| EVD-TOPIC-NNN | Evidence record grouped by topic; three-digit sequence within each topic | EVD-RAG-001, EVD-SA-001, EVD-PVC-001, EVD-VSS-001 | [Evidence ledger](validation.md) |
+| EXT-NN | External documentation reference; two-digit sequence across the catalog | EXT-01–EXT-07 | [Reference registry](references.md) |
+| RM-NNN | Roadmap project; three-digit sequence across the catalog | RM-001–RM-002 | [Roadmap](roadmap.md) |
 
-**Evidence topics:** RAG means document-grounded question answering; SA means Stack Automation deployment/lifecycle; PVC means persistent-volume-claim storage lifecycle. These group labels do not imply a successful run or an attached public artifact. Roadmap references currently live alongside their project; they are not assigned EXT IDs unless added to the common registry.
+**Evidence topics:** RAG means document-grounded question answering; SA means Stack Automation deployment/lifecycle; PVC means persistent-volume-claim storage lifecycle; VSS means video search and summarization. These group labels do not imply a successful run or an attached public artifact. Roadmap references currently live alongside their project; they are not assigned EXT IDs unless added to the common registry.
+
+Earlier planning names DEMO-VSS-001 and ROADMAP-VSS-SA-001 map to the single canonical records DEMO-03 and RM-002 respectively. Preserve these aliases for continuity.
 
 **Sequence rules:** allocate the next unused number in the relevant scope when adding a real record. Keep the existing zero padding; extend digit width only when the sequence exceeds it. Never renumber or reuse an ID, including when a record is retired. Explicitly link a new record to its solution/pilot. Use the same ID when revising the same object; record evidence dates and revisions separately.
 
@@ -79,7 +83,7 @@ Identifiers are stable cross-references. Their number identifies a record; it do
 
 ## Reading status and evidence
 
-The current RAG pilot is **UNDER VALIDATION — PARIS BSC LABORATORY**. Commercial pages show that status with a concise scope statement. The [technical ledger](validation.md#evidence-vocabulary) distinguishes SOURCE VERIFIED, HISTORICALLY REPORTED, TEST DEFINITION PRESENT and PENDING. These apply to individual claims and cannot be read as overall readiness.
+The RAG pilot is **UNDER VALIDATION — PARIS BSC LABORATORY**. VSS is a **VALIDATED DEMONSTRATION**, with its owner-confirmed evidence and remaining checks recorded separately under EVD-VSS-001. Shared pages identify which entry each status applies to. Commercial pages show concise status and scope. The [technical ledger](validation.md#evidence-vocabulary) distinguishes SOURCE VERIFIED, HISTORICALLY REPORTED, TEST DEFINITION PRESENT and PENDING. These apply to individual claims and cannot be read as overall readiness.
 
 Roadmap **PLANNED** and **IN PROGRESS** describe work progress, separately from validation. A business opportunity does not become a validated sector demonstration by receiving a UC ID, and an EVD identifier does not establish that evidence is complete.
 

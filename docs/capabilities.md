@@ -1,10 +1,12 @@
-# Technical capability registry — SAIF-AI-001
+# Technical capability registry — RAG and VSS
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
 
-These stable references describe the adapted pilot. A source review verifies that a configuration or implementation exists; it does not prove successful execution. See the [evidence ledger](validation.md) for the scope of each finding.
+TC-01–TC-04 describe SAIF-AI-001 (RAG); TC-05 describes SAIF-AI-002 (VSS). Status and evidence are specific to each entry. A source review verifies that a configuration or implementation exists; it does not prove successful execution. See the [evidence ledger](validation.md) for the scope of each finding.
 
 ## TC-01 — Document ingestion
 
@@ -37,3 +39,14 @@ These stable references describe the adapted pilot. A source review verifies tha
 **Status:** workflow definition verified in source. A temporary live proxy correction is recorded as validated in the source description; automated replay and repeatable complete deployment are not proven by that statement. Namespace security onboarding requires an authorized administrator and is not performed by the application runner. No complete infrastructure or lifecycle automation claim is made.
 
 **Links:** [DEMO-02](demonstrations.md#demo-02--deployment-and-lifecycle-walkthrough), [EVD-SA-001](validation.md#evd-sa-001--deployment-and-lifecycle-evidence), [EXT-02](references.md#ext-02--cisco-stack-automation), [EXT-05](references.md#ext-05--red-hat-openshift).
+
+
+## TC-05 — Video intelligence
+
+**Catalog entry:** SAIF-AI-002 — NVIDIA Video Search and Summarization (VSS).
+
+**Purpose:** search recorded video, generate summaries and answer questions about recorded events using the NVIDIA VSS application on the BSC AI platform.
+
+**Status:** VALIDATED DEMONSTRATION — functional behavior and the existing OpenShift deployment confirmed in the catalog owner's prior laboratory and recorded-demonstration context. Further reproducibility and controlled functional-accuracy testing are planned. This update does not independently replay the recordings or inspect the live environment.
+
+**Links:** [DEMO-03](demonstrations.md#demo-03--from-video-to-insight), [VSS functional view](architecture.md#vss-functional-view), [EVD-VSS-001](validation.md#evd-vss-001--video-intelligence-demonstration-evidence), [EXT-07](references.md#ext-07--nvidia-video-search-and-summarization).

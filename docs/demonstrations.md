@@ -1,10 +1,12 @@
 # Demonstration and walkthrough records
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
 
-**Verified runtime demonstrations supported by a reviewed public evidence pack: none at initial publication.** The source-derived workflow below can be explained as a documentation walkthrough. Historical functional reports are preserved as reports, not promoted into validated current results. No vertical-specific scenario is validated. See the [technical vertical assessment](validation.md#vertical-assessment-and-business-use-case-boundaries) for the scope behind the commercial use cases.
+**RAG evidence at initial publication:** no runtime demonstration supported by a reviewed public evidence pack. The source-derived workflow below can be explained as a documentation walkthrough. Historical functional reports are preserved as reports, not promoted into validated current results. No RAG vertical-specific scenario is validated. The separately validated VSS demonstration is recorded under [DEMO-03](#demo-03--from-video-to-insight). See the [technical vertical assessment](validation.md#vertical-assessment-and-business-use-case-boundaries) for the scope behind the commercial use cases.
 
 ## DEMO-01 — Document-grounded question answering
 
@@ -49,3 +51,33 @@ Explain manual platform onboarding, GPU capacity qualification, private credenti
 For future execution evidence, record a fresh deployment and functional smoke test, then a separate repeat deployment. Storage destruction tests must use authorized disposable data and a recovery plan. Validate audit-only behavior, retention, environment scoping, failure stops and storage/backend outcomes separately. A successfully completed orchestrator task alone is insufficient to prove correct answers, secure operation, restored data or reclaimed backend capacity.
 
 This publication does not execute deployment or termination, provide access instructions or claim a zero-touch lifecycle. Laboratory validation and any demonstration approval are separate from the act of publishing this documentation.
+
+
+## DEMO-03 — From Video to Insight
+
+| Field | Record |
+|---|---|
+| Catalog entry | SAIF-AI-002 — NVIDIA Video Search and Summarization (VSS) |
+| Business purpose | Make recorded video easier to search, summarize and discuss through questions about events |
+| Technical reference | [TC-05](capabilities.md#tc-05--video-intelligence) |
+| Demonstration status | **VALIDATED DEMONSTRATION** — recorded functional demonstration confirmed by the catalog owner |
+| OpenShift deployment | **VALIDATED** in prior laboratory work on the existing configuration |
+| Live execution status | Previously validated; confirm session availability under the shared GPU scheduling arrangement |
+| Reproducibility | **FURTHER TESTING** |
+| Evidence | [EVD-VSS-001](validation.md#evd-vss-001--video-intelligence-demonstration-evidence) |
+| Automation | Existing start/stop procedures documented and exercised in prior work; [private Stack Automation blueprint planned](roadmap.md#rm-002-project) |
+| External background | [EXT-07 NVIDIA VSS](references.md#ext-07--nvidia-video-search-and-summarization), [EXT-05 OpenShift](references.md#ext-05--red-hat-openshift) |
+
+### Technical scope and evidence provenance
+
+The catalog owner's approved VSS description in the prior working context confirms video search, summaries and questions about recorded events, supported by application and infrastructure demonstration recordings. Existing OpenShift workloads and controlled shutdown/GPU release were also validated in that prior laboratory context. This catalog update records that owner-confirmed validation; it does not claim a new live test or independent replay of the video artifacts on 4 November 2026. Approved public recording links have not yet been supplied.
+
+The demonstrated configuration uses Cisco GPU-enabled infrastructure, Red Hat OpenShift, NVIDIA VSS and supporting inference/retrieval services. Component versions and model profiles require a separate recorded compatibility inventory. No new VSS release, real-time analytics feature, alerting function or production integration is inferred from current upstream documentation.
+
+### Session preparation and further testing
+
+Confirm the approved recording or live session scope, software configuration and available resources with the laboratory team. The recorded operating arrangement schedules VSS and another agent demonstration separately on shared resources. Do not infer simultaneous operation. Keep environment details and lifecycle procedures private.
+
+Further tests should reproduce video search, summarization and Q&A using official vendor examples or controlled synthetic content compatible with the current architecture. Record expected answers/events, observed results, errors, reset/restart and reviewer decisions. Do not run performance, throughput, capacity or production-scale load benchmarks. Detailed acceptance for future automation belongs to [RM-002](roadmap.md#rm-002-project).
+
+**Identifier continuity:** DEMO-03 is the catalog's sequential demonstration ID; the earlier planning alias was DEMO-VSS-001. Both refer to this single record.

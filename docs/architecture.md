@@ -1,6 +1,8 @@
 # Functional architecture and sanitized logical topologies
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
 
@@ -103,3 +105,17 @@ The sequence reflects source dependencies, including the post-gateway correction
 | Security and operations | Platform onboarding, identity, transport, logging and recovery ownership | Responsibilities required; controls are not certified by this catalog |
 
 No additional Cisco security, observability or fabric product is shown as deployed or tested. The broader [Secure AI Factory reference](references.md#ext-06--cisco-secure-ai-factory) is solution context, not proof that every reference-architecture component exists in this pilot.
+
+
+## VSS functional view
+
+**SAIF-AI-002** has a separate video intelligence demonstration. Its functional path is **approved recorded video → VSS processing and supporting GPU inference/retrieval → video search, summaries and event Q&A → human review of the recording**. These are logical roles, not deployed service names or a network map.
+
+| Layer | Role in the demonstrated VSS configuration |
+|---|---|
+| Application | NVIDIA VSS video search, summarization and questions about recorded events |
+| AI services | Supporting inference, embedding/reranking and retrieval services; exact model/component inventory to be recorded privately |
+| Platform | Red Hat OpenShift on Cisco GPU-enabled infrastructure |
+| Lifecycle | Laboratory-managed start/stop and shared GPU allocation; private Stack Automation integration planned |
+
+The validation source is the [VSS demonstration record](demonstrations.md#demo-03--from-video-to-insight). The RAG diagrams earlier on this page describe SAIF-AI-001; they are not the VSS deployment topology. An exact VSS component diagram requires the reviewed inventory, and will remain abstract when published.

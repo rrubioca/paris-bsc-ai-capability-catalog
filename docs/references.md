@@ -1,6 +1,8 @@
 # External reference registry
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
 
@@ -41,3 +43,10 @@ Used by [TC-04](capabilities.md#tc-04--cisco-stack-automation-application-workfl
 [Cisco Secure AI Factory with NVIDIA](https://www.cisco.com/site/us/en/solutions/artificial-intelligence/secure-ai-factory/index.html) gives broader solution context. This pilot is a bounded application evaluation; it does not demonstrate every infrastructure, security or observability component of the reference design.
 
 Used by the [executive summary](../README.md#executive-summary) and [architecture boundaries](architecture.md#dependency-and-responsibility-boundaries).
+
+
+## EXT-07 — NVIDIA Video Search and Summarization
+
+References checked on **4 November 2026**. [NVIDIA's VSS blueprint page](https://build.nvidia.com/nvidia/video-search-and-summarization) describes video ingestion, summarization and interactive Q&A. The [official VSS documentation](https://docs.nvidia.com/vss) provides architecture and implementation background. Floating documentation may describe releases and capabilities beyond the demonstrated BSC configuration; it is not the deployed version inventory.
+
+Used by [TC-05](capabilities.md#tc-05--video-intelligence), [DEMO-03](demonstrations.md#demo-03--from-video-to-insight) and the [VSS business opportunities](business-use-cases.md#vss-video-intelligence-opportunities). BSC evidence is recorded separately in [EVD-VSS-001](validation.md#evd-vss-001--video-intelligence-demonstration-evidence).

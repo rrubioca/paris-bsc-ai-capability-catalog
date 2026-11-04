@@ -1,10 +1,12 @@
 # Business opportunity playbook
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
 
-All six opportunities below are **potential applications** of SAIF-AI-001, the shared document-grounded Q&A pilot. Use this playbook for customer discovery and positioning. The pilot is under laboratory validation; technical scope and detailed sector assessment are available in the linked demonstration and validation records.
+The first six opportunities below are **potential applications** of SAIF-AI-001, the shared document-grounded Q&A pilot. [VSS video intelligence opportunities](#vss-video-intelligence-opportunities) follow under SAIF-AI-002. Use this playbook for customer discovery and positioning. The pilot is under laboratory validation; technical scope and detailed sector assessment are available in the linked demonstration and validation records.
 
 Each case connects **business opportunity → enabling capability (TC) → demonstration record (DEMO) → external documentation (EXT)**. Keep these references when reusing a case in sales material. Potential benefits should be assessed against customer objectives and agreed measures.
 
@@ -80,6 +82,70 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 
 **Three references:** [TC-01–TC-04](capabilities.md) → [DEMO-01 · Document Q&A](demonstrations.md#demo-01--document-grounded-question-answering), [DEMO-02 · Deployment walkthrough](demonstrations.md#demo-02--deployment-and-lifecycle-walkthrough) → [EXT-01 NVIDIA RAG](references.md#ext-01--nvidia-rag-blueprint), [EXT-02 Stack Automation](references.md#ext-02--cisco-stack-automation), [EXT-05 OpenShift](references.md#ext-05--red-hat-openshift).
 
+## VSS video intelligence opportunities
+
+**SAIF-AI-002 — NVIDIA VSS** connects recorded video with search, summaries and questions about events. **Demonstration status: VALIDATED.** The opportunities below describe potential customer applications; customer value is assessed against the selected workflow and success criteria.
+
+## Manufacturing video review
+
+**Use case: UC-07**
+
+**Problem and audience:** operations teams review industrial recordings to find relevant events. Potential value is less manual review effort and easier access to information for operational investigation.
+
+**Discovery:** which event or process needs reviewing? Who interprets the recording and owns the resulting action?
+
+**Evaluation focus:** select an operational video-review task and assess whether search, summaries and answers help the responsible team locate relevant information.
+
+**Three references:** [TC-05 video intelligence](capabilities.md#tc-05--video-intelligence) → [DEMO-03 From Video to Insight](demonstrations.md#demo-03--from-video-to-insight) → [EXT-07 NVIDIA VSS](references.md#ext-07--nvidia-video-search-and-summarization).
+
+## Retail incident review
+
+**Use case: UC-08**
+
+**Problem and audience:** retail operations teams need to locate relevant moments in recorded video. Potential value is a more focused incident-review conversation.
+
+**Discovery:** what incident or operational question matters? Which team reviews the result and determines follow-up?
+
+**Evaluation focus:** agree a bounded review scenario and assess the usefulness of video search, summaries and event questions.
+
+**Three references:** [TC-05](capabilities.md#tc-05--video-intelligence) → [DEMO-03](demonstrations.md#demo-03--from-video-to-insight) → [EXT-07 NVIDIA VSS](references.md#ext-07--nvidia-video-search-and-summarization).
+
+## Logistics and warehouse visibility
+
+**Use case: UC-09**
+
+**Problem and audience:** warehouse and distribution teams review recordings to understand operational events. Potential value is easier navigation to relevant information during process investigation.
+
+**Discovery:** which operational event should the team find? How is video review used in the current investigation process?
+
+**Evaluation focus:** use a defined warehouse or distribution review task to assess information relevance and the usefulness of generated summaries.
+
+**Three references:** [TC-05](capabilities.md#tc-05--video-intelligence) → [DEMO-03](demonstrations.md#demo-03--from-video-to-insight) → [EXT-07 NVIDIA VSS](references.md#ext-07--nvidia-video-search-and-summarization).
+
+## Facilities and smart buildings
+
+**Use case: UC-10**
+
+**Problem and audience:** facilities teams need a practical way to review recordings across their activities. Potential value is less effort finding relevant events and communicating what happened.
+
+**Discovery:** which facility activity or event requires review? Who needs the summary and what information should it contain?
+
+**Evaluation focus:** assess whether summaries and questions about a recording help staff navigate a selected facilities workflow.
+
+**Three references:** [TC-05](capabilities.md#tc-05--video-intelligence) → [DEMO-03](demonstrations.md#demo-03--from-video-to-insight) → [EXT-07 NVIDIA VSS](references.md#ext-07--nvidia-video-search-and-summarization).
+
+## Enterprise security investigations
+
+**Use case: UC-11**
+
+**Problem and audience:** security teams review footage to understand recorded events. Potential value is more focused information finding in support of human-led investigation.
+
+**Discovery:** what should an investigator find in the recording? Who reviews generated information and retains responsibility for the investigation?
+
+**Evaluation focus:** assess search, summaries and event questions in a bounded investigation scenario with human review of the source recording.
+
+**Three references:** [TC-05](capabilities.md#tc-05--video-intelligence) → [DEMO-03](demonstrations.md#demo-03--from-video-to-insight) → [EXT-07 NVIDIA VSS](references.md#ext-07--nvidia-video-search-and-summarization).
+
 ## Shared qualification and proof-of-value plan
 
 | Qualification area | Information to agree before a customer evaluation | Value question |
@@ -92,7 +158,7 @@ Each case connects **business opportunity → enabling capability (TC) → demon
 | Baseline and economics | Manual-search baseline, proposed measurement method and customer-defined thresholds | Would observed benefit justify implementation and operating cost? |
 | Decision | Explicit go, revise or stop criteria and accountable decision maker | What evidence is needed to proceed beyond the trial? |
 
-Proposed measures include task completion, source relevance, unsupported-answer frequency, user-rated usefulness and observed response time under a defined load. These are evaluation suggestions, **not Paris BSC measurements or promised improvements**. Agree the measurement protocol and acceptance thresholds with the customer; publish only reviewed results that can be safely disclosed.
+Proposed measures include task completion, source relevance, unsupported-answer frequency, user-rated usefulness and functional accuracy against expected results. These are evaluation suggestions, **not Paris BSC measurements or promised improvements**. Agree the measurement protocol and acceptance thresholds with the customer; publish only reviewed results that can be safely disclosed.
 
 ## Continue the conversation
 

@@ -2,9 +2,9 @@
 
 > **PLANNED — FUTURE WORK, NOT A VALIDATED CAPABILITY**
 >
-> Last reviewed: **3 November 2026**. This page describes intended evaluation work. No agent-security runtime evidence, compatibility pass or successful enforcement result is claimed.
+> Last reviewed: **4 November 2026**. This page describes intended evaluation work. No agent-security runtime evidence, compatibility pass or successful enforcement result is claimed.
 >
-> The existing RAG pilot retains its separate status: **UNDER VALIDATION — PARIS BSC LABORATORY**.
+> Current demonstrations have separate status: RAG is **UNDER VALIDATION — PARIS BSC LABORATORY**; VSS is a **VALIDATED DEMONSTRATION**. Planned automation does not change either status.
 
 [Catalog home](../README.md) · [Navigation guide](navigation.md) · [Current pilot evidence](validation.md) · [Publication boundary](../SECURITY.md)
 
@@ -15,8 +15,9 @@ This roadmap gives Cisco, partners and TD SYNNEX visibility into future Paris BS
 | Project | Status | Next gate |
 |---|---|---|
 | RM-001 — Agent Security Demonstration | **PLANNED** | Confirm access to the official Cisco lab, its prepared simulation assets and an isolated non-production evaluation environment |
+| RM-002 — Private VSS Stack Automation Blueprint | **PLANNED** | Assess the existing VSS implementation and capture its reviewed dependency/configuration inventory |
 
-**PLANNED** means scoped work awaiting execution. **IN PROGRESS** requires an actual execution start, a dated activity record and an accountable BSC technical owner recorded privately. Documentation preparation alone does not establish implementation progress. All four phases below are PLANNED as of this review; no deployment or test execution was performed for this roadmap update. A phase's acceptance gate is passed only with reviewed evidence; record unmet gates and dependencies explicitly rather than implying completion.
+**PLANNED** means scoped work awaiting execution. **IN PROGRESS** requires an actual execution start, a dated activity record and an accountable BSC technical owner recorded privately. Documentation preparation alone does not establish implementation progress. Each project below has four PLANNED phases as of this review; no deployment or test execution was performed for this roadmap update. A phase's acceptance gate is passed only with reviewed evidence; record unmet gates and dependencies explicitly rather than implying completion.
 
 ## RM-001 project
 
@@ -88,9 +89,43 @@ NVIDIA's current [OpenShift guide](https://docs.nvidia.com/openshell/kubernetes/
 
 **Deliverables:** private blueprint, operational code/configuration, internal runbook and evidence pack. **Do not publish the blueprint or operational code in this public catalog.** Publish only an approved, sanitized description of purpose, status, tested scope and limitations. Do not link private operational locations or access instructions here.
 
+## RM-002 project
+
+**Private Cisco Stack Automation Blueprint for NVIDIA VSS — SAIF-AI-002**
+
+**Status: PLANNED.** Extend the [validated VSS demonstration](demonstrations.md#demo-03--from-video-to-insight) with repeatable internal BSC deployment and lifecycle management. Existing operational start/stop automation is a starting point; it is not evidence of an accepted Stack Automation deployment.
+
+**Identifier continuity:** RM-002 is the catalog's sequential project ID. ROADMAP-VSS-SA-001 is its earlier planning alias, not a second initiative.
+
+### Phase 1 — Assess implementation and compatibility
+
+**Status: PLANNED.** Review the existing private scripts/manifests, lifecycle and dependencies. Record exact application, model/service, OpenShift, GPU, storage and entitlement requirements. Confirm the shared-resource scheduling constraint before choosing a deployment pattern.
+
+**Acceptance:** reviewed bill of materials, dependency map, resource/lifecycle constraints and a private evidence baseline for the existing demonstration. Document unresolved compatibility questions rather than assuming the current scripts are unchanged.
+
+### Phase 2 — Develop the private blueprint
+
+**Status: PLANNED.** Implement the approved deployment workflow in a private engineering repository using supported Stack Automation mechanisms and secure secret handling.
+
+**Acceptance:** reviewed, pinned blueprint that checks prerequisites and documents deployment dependencies, failure handling and remaining manual steps. No operational code, private repository location or access configuration is published here.
+
+### Phase 3 — Validate lifecycle and functionality
+
+**Status: PLANNED.** Validate deployment, startup/readiness, shutdown, restart and recovery in an authorized non-production environment. Reproduce video search, summarization and Q&A with official examples or controlled synthetic content; test expected behavior and functional accuracy within the actual architecture. No performance benchmarking.
+
+**Acceptance:** recorded outcomes for each lifecycle stage and scenario, including errors and shared-resource behavior; repeat the deployment and demonstration against the pinned configuration with no undocumented manual intervention. Dependencies are the Phase 1 inventory and Phase 2 blueprint.
+
+### Phase 4 — Internal acceptance and catalog update
+
+**Status: PLANNED.** Obtain technical review of repeatability and establish an internal operating procedure. Publish an approved sanitized summary of the tested configuration, evidence, scope and limitations.
+
+**Acceptance and deliverables:** private version-controlled blueprint, internal runbook, compatibility report and reproducible functional evidence pack; public catalog status/evidence updates only. **The blueprint, operational scripts and administrative configuration remain private for internal BSC use.**
+
+**Dependencies and risks:** review approved software/model access, current implementation drift, GPU availability, storage/recovery, platform permissions and artifact availability. Preserve existing shared-resource constraints. A blocked prerequisite keeps the affected phase pending. Prior functional validation does not prove a new blueprint's repeatability.
+
 ## Dependencies, risks and decision points
 
-The main sequence is **official lab baseline → platform integration → SaaS validation → private automation**. Research and tenant preparation may overlap, but no later gate inherits a pass from a document, upstream example or earlier component test.
+For RM-001, the main sequence is **official lab baseline → platform integration → SaaS validation → private automation**. RM-002 follows the separate VSS assessment and automation gates above. Research and tenant preparation may overlap, but no later gate inherits a pass from a document, upstream example or earlier component test.
 
 | Risk or dependency | Decision / treatment |
 |---|---|

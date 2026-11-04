@@ -1,6 +1,8 @@
 # Compatibility and component matrix
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
 
@@ -33,3 +35,19 @@ This is a **pilot evidence matrix**, not a certified bill of materials or vendor
 The pilot contains a Blackwell adaptation; it does not establish that every GPU, NVIDIA NIM image, upstream chart release or OpenShift version works. The older generic sizing language retained in the engineering description is not used here as Blackwell sizing guidance. Current NVIDIA documentation may describe a newer architecture than this Milvus/MinIO-based pilot.
 
 Changes to GPU, driver, runtime, model profile, NIM image, chart, platform, authentication path or storage lifecycle require revalidation of the affected tests and dependent demonstrations. See [validation](validation.md) and [limitations](limitations.md).
+
+
+## VSS compatibility assessment
+
+**SAIF-AI-002** is functionally validated on the existing BSC VSS configuration in prior laboratory work. This is a configuration-specific result, not a general vendor support matrix.
+
+| Area | Assessment |
+|---|---|
+| Application and OpenShift | Existing VSS application and required workloads previously validated as healthy |
+| GPU resource management | Controlled shutdown and GPU release validated in prior work |
+| Detailed bill of materials | Exact VSS, model, inference, driver, platform and storage versions/profiles to be recorded and reviewed |
+| Coexistence | Shared resources require scheduling VSS separately from the other agent demonstration in the recorded arrangement |
+| Reproducibility | Further testing on the documented configuration |
+| Stack Automation | Private blueprint planned; no automated VSS deployment result claimed |
+
+Do not apply the RAG-specific model tags, GPU allocations or blueprint revision in the matrix above to VSS. See [EVD-VSS-001](validation.md#evd-vss-001--video-intelligence-demonstration-evidence) and [RM-002](roadmap.md#rm-002-project).

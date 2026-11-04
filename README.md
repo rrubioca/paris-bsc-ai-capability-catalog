@@ -2,7 +2,7 @@
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
 >
-> NVIDIA RAG pilot on Cisco Stack Automation, adapted for RTX PRO 6000 Blackwell. First published 2 November 2026.
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status is tracked per entry. Catalog first published 2 November 2026.
 
 ## Start here
 
@@ -16,17 +16,19 @@
 
 ## Executive summary
 
-This English-language catalog connects customer opportunities with the AI application work being evaluated at the TD SYNNEX Paris Business Solution Center (BSC). It gives commercial readers a clear value story and technical readers a route to design, compatibility and evidence.
+This English-language catalog connects customer opportunities with AI applications and demonstrations at the TD SYNNEX Paris Business Solution Center (BSC). It gives commercial readers a clear value story and technical readers a route to design, compatibility and evidence.
 
 **SAIF-AI-001 — NVIDIA RAG on Cisco Stack Automation, adapted for NVIDIA RTX PRO 6000 Blackwell** explores enterprise document-grounded question answering in the Cisco Secure AI Factory context. The demonstration story follows a document collection from ingestion to retrieval and answer generation, alongside the application deployment workflow in Stack Automation.
 
+**SAIF-AI-002 — NVIDIA Video Search and Summarization (VSS)** demonstrates video search, summaries and questions about recorded events on the BSC AI platform. Explore [From Video to Insight](docs/demo-overview.md#vss-at-a-glance) and its [business opportunities](docs/business-use-cases.md#vss-video-intelligence-opportunities).
+
 **Partner value:** help customers assess enterprise knowledge access, identify a suitable proof of value and connect application needs with AI infrastructure and operating requirements. Benefits are potential value to assess against customer objectives; the catalog does not claim measured business results.
 
-**Current status:** the pilot is under laboratory validation. See the [demonstration overview](docs/demo-overview.md) for scope and the [technical validation ledger](docs/validation.md) for detailed findings and next checks.
+**Current status:** RAG is **UNDER VALIDATION**; VSS is a **VALIDATED DEMONSTRATION**, with further reproducibility work planned. The [demonstration overview](docs/demo-overview.md) introduces both entries. Technical findings and evidence are recorded separately in the [validation ledger](docs/validation.md).
 
 ## Business use cases, verticals and customer value
 
-The common opportunity is to help teams find relevant information in an approved document collection and review generated answers against authoritative sources. The following are **potential applications of the shared RAG workflow**; select a customer-specific proof of value through discovery.
+The following six opportunities are **potential applications of the RAG workflow**. For video intelligence, use the separate [VSS opportunities](docs/business-use-cases.md#vss-video-intelligence-opportunities) across manufacturing, retail, logistics, facilities and security. Select the customer-specific proof of value through discovery.
 
 Each opportunity links to its enabling capability, demonstration record and external documentation. Detailed test scope and sector assessment sit in the technical records linked from the demo.
 
@@ -47,13 +49,15 @@ The [business opportunity playbook](docs/business-use-cases.md) provides discove
 
 ## Demonstration scope and partner engagement
 
-Use the [demonstration overview](docs/demo-overview.md) to introduce the document Q&A experience and the Stack Automation deployment walkthrough. Confirm the format, availability and approved scope of a BSC session through the partner's existing BSC contact channel.
+Use the [demonstration overview](docs/demo-overview.md) to choose between document Q&A (RAG) and video intelligence (VSS), with links to the relevant technical records. Confirm the format, availability and approved scope of a BSC session through the partner's existing BSC contact channel.
 
 Bring the customer objective, business sponsor, representative questions and agreed success criteria. The technical team can use the linked demo records and validation ledger to prepare the session and confirm its scope.
 
 ## Roadmap
 
 [RM-001 — Agent Security Demonstration](docs/roadmap.md) is **PLANNED**: OpenClaw / Cisco DefenseClaw / NVIDIA NemoClaw & OpenShell / Cisco AI Defense SaaS. The four phases cover the official Cisco lab, BSC platform evaluation, SaaS integration and a **private internal BSC Stack Automation blueprint**. Roadmap work is separate from current pilot capabilities; the private blueprint and operational code stay outside this public catalog.
+
+[RM-002 — Private VSS Stack Automation Blueprint](docs/roadmap.md#rm-002-project) is **PLANNED**, extending the validated VSS demonstration with repeatable internal deployment and lifecycle automation.
 
 ## Technical architecture and validation
 

@@ -1,6 +1,8 @@
 # Validation states and evidence ledger
 
 > **UNDER VALIDATION — PARIS BSC LABORATORY**
+>
+> RAG pilot status. **VSS: VALIDATED DEMONSTRATION**. Status and evidence are specific to each entry.
 
 [Home](../README.md) · [Navigation guide](navigation.md) · [Demonstration overview](demo-overview.md)
 
@@ -76,3 +78,29 @@ Future verification must distinguish helper logic tests, actual cluster object d
 For the exact scope being approved, require the deployed blueprint revision, resolved component versions and digests, hardware/software inventory, approved dataset and procedure, observed positive and negative results, sanitized supporting artifacts, test date, named responsible technical reviewer and recorded review decision. Confirm repeatability, operational dependencies and known limitations. A technical review and any required laboratory demonstration authorization must be recorded; neither is invented here.
 
 Update TC, DEMO, compatibility, limitations and business references together. A change in one component does not automatically revalidate all previous outcomes. External vendor documentation and a code label cannot replace Paris BSC evidence.
+
+
+## EVD-VSS-001 — Video intelligence demonstration evidence
+
+**Record status: owner-confirmed validated demonstration; public evidence links awaiting approved publication assets.** This is the evidence record for **SAIF-AI-002 / DEMO-03**, separate from the RAG records above. Recorded functional demonstrations and prior OpenShift workload validation were confirmed by the catalog owner in the approved working context. No live environment test or independent video replay was performed for this documentation update on **4 November 2026**.
+
+| Validation area | Assessment and boundary |
+|---|---|
+| Video search, summarization and Q&A | **VALIDATED** in the recorded BSC demonstration confirmed by the catalog owner |
+| Demonstration recordings | **AVAILABLE** in the existing private demonstration material; no public URL approved or attached here |
+| Existing OpenShift deployment health | **VALIDATED** in prior laboratory work; this entry does not report a fresh health probe |
+| Controlled shutdown and GPU release | **VALIDATED** in prior laboratory work |
+| Start/stop procedures | **DOCUMENTED AND EXERCISED** in the prior laboratory context |
+| Component compatibility | **FUNCTIONALLY VALIDATED** on that configuration; exact version/profile matrix still to be captured |
+| Demonstration reproducibility | **FURTHER TESTING** |
+| Functional accuracy and expected behavior | **PLANNED** using vendor examples or controlled synthetic content |
+| Automated Stack Automation deployment | **PLANNED** as a private blueprint under [RM-002](roadmap.md#rm-002-project) |
+| Performance benchmarking | **OUT OF SCOPE** |
+
+Retain recordings, raw workload observations, environment identities and operational procedures privately. When approved evidence can be published, add sanitized recording/results links here with the actual run date, configuration, scenario and technical review. The source for this update is the owner's confirmed demonstration and laboratory context; this page does not claim that the underlying artifacts were independently re-reviewed in this chat.
+
+The VSS business opportunities UC-07–UC-11 are potential sector applications of the shared demonstration, not separately validated industry deployments or measured benefits. The recorded video-review narrative does not establish real-time monitoring, production integrations or autonomous safety/security decisions.
+
+## BSC functional validation policy
+
+Validation focuses on functionality, compatibility, expected behavior, functional accuracy and reproducibility. Use official vendor examples or controlled synthetic content suited to the actual architecture. **Performance, throughput, capacity and production-scale load benchmarking are outside the BSC validation program.** Record the tested configuration and scenario, expected/observed results, errors, limitations and review. This policy applies to both RAG and VSS and to future entries.

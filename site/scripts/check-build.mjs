@@ -53,6 +53,27 @@ for (const doc of catalog.docs.values()) {
   if (doc.route.startsWith('docs/') && !htmlFiles.get('security/index.html').includes(`${base}/${doc.route}/`)) throw new Error(`Missing generated sidebar entry: ${doc.path}`);
 }
 for (const asset of assets) if (!all.has(asset)) throw new Error(`Missing public asset: ${asset}`);
+
+// The explorer must present exactly the derived public records, not a second manually maintained catalog.
+const explorer = htmlFiles.get('explore/index.html');
+if (!explorer) throw new Error('Missing capability explorer');
+const publicRecords = catalog.records.filter(record => record.type !== 'reference');
+const cardTags = [...explorer.matchAll(/<article\b[^>]*\bdata-type="([^"]*)"[^>]*>/g)];
+if (cardTags.length !== publicRecords.length) throw new Error('Explorer card count differs from canonical records');
+for (const record of publicRecords) {
+  const matching = cardTags.filter(([tag, type]) =>
+    type === record.type &&
+    tag.includes('data-domain="' + (record.status?.domain ?? '') + '"') &&
+    tag.includes('data-solution="' + (record.solutionId ?? (record.type === 'solution' ? record.id : '')) + '"')
+  );
+  if (matching.length === 0) throw new Error('Explorer missing canonical classification for ' + record.id);
+}
+for (const id of ['query','type','solution','domain','share','count','empty']) {
+  if (!ids.get('explore/index.html').has(id)) throw new Error('Explorer missing control ' + id);
+}
+if (!explorer.includes('Copy filtered link') || !explorer.includes('No records match these filters')) {
+  throw new Error('Explorer lost sharing or no-results guidance');
+}
 const htmlCount = htmlFiles.size;
 if (!all.has('pagefind/pagefind.js')) throw new Error('Missing Pagefind search bundle');
 console.log(JSON.stringify({ sourcePages: documents.length, htmlPages: htmlCount, checkedLocalLinksAndResources: checked, sourceAnchorsPreserved: true, searchBundle: true }, null, 2));

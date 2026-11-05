@@ -49,11 +49,26 @@ export async function readPublicSources(root) {
     result.set(file, await fs.readFile(current, 'utf8'));
   }
   const publicDir = path.join(root, 'site/public');
-  const publicFiles = await fs.readdir(publicDir);
-  if (publicFiles.length !== 1 || publicFiles[0] !== 'favicon.svg') throw new Error('Unreviewed presentation asset in site/public');
+  const publicEntries = await fs.readdir(publicDir);
+  if (publicEntries.join(',') !== ['brand', 'favicon.svg'].join(',')) throw new Error('Unreviewed presentation asset in site/public');
   const favicon = path.join(publicDir, 'favicon.svg');
   if ((await fs.lstat(favicon)).isSymbolicLink()) throw new Error('Symbolic link not allowed: favicon');
   assertPassiveSvg(await fs.readFile(favicon, 'utf8'), 'favicon.svg');
+  // Only the reviewed TD SYNNEX / Cisco raster branding assets may be published.
+  // An unexpected file, non-PNG payload, symlink or oversized replacement fails the build.
+  const brandDir = path.join(publicDir, 'brand');
+  if (!(await fs.lstat(brandDir)).isDirectory()) throw new Error('Invalid branding directory');
+  const approved = ['cisco-distributor.png', 'cisco-intro.png', 'td-synnex-logo.png'];
+  const actual = await fs.readdir(brandDir);
+  if (actual.join(',') !== approved.join(',')) throw new Error('Unreviewed branding asset');
+  const pngMagic = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+  for (const file of approved) {
+    const entry = path.join(brandDir, file);
+    const info = await fs.lstat(entry);
+    if (!info.isFile() || info.isSymbolicLink() || info.size > 1000000) throw new Error('Invalid branding asset: ' + file);
+    const bytes = await fs.readFile(entry);
+    if (!bytes.subarray(0, 8).equals(pngMagic)) throw new Error('Branding image is not PNG: ' + file);
+  }
   return result;
 }
 

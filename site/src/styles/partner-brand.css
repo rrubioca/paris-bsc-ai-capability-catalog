@@ -1,0 +1,36 @@
+/* TD SYNNEX / Cisco partner-facing Starlight design */
+:root {
+  --sl-color-accent-low: #d7f2f3;
+  --sl-color-accent: #047f96;
+  --sl-color-accent-high: #024962;
+  --sl-color-text-accent: #047f96;
+  --sl-font: Arial, Helvetica, sans-serif;
+}
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #07334a;
+  --sl-color-accent: #58d8d4;
+  --sl-color-accent-high: #def8f7;
+  --sl-color-text-accent: #58d8d4;
+}
+header.header { border-bottom: 2px solid #03a5a4; }
+.site-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800; letter-spacing: -.02em; gap: .65rem;
+}
+.site-title::before {
+  content: ''; width: 126px; height: 31px;
+  display: inline-block; flex: none;
+  background: #fff url('/paris-bsc-ai-capability-catalog/brand/td-synnex-logo.png') center/contain no-repeat;
+  border-radius: 2px;
+}
+.site-title::after {
+  content: ''; width: 60px; height: 45px;
+  display: inline-block; flex: none;
+  background: url('/paris-bsc-ai-capability-catalog/brand/cisco-distributor.png') center/contain no-repeat;
+}
+.sl-markdown-content a { text-underline-offset: 3px; }
+.sl-markdown-content h2 { border-bottom: 1px solid var(--sl-color-hairline); padding-bottom: .45rem; }
+@media (max-width: 690px) {
+  .site-title::before { width: 87px; height: 25px; }
+  .site-title::after { width: 42px; height: 32px; }
+}

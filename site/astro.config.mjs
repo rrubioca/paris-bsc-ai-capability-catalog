@@ -16,6 +16,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [starlight({
     title: 'Paris BSC',
+    customCss: ['./src/styles/partner-brand.css'],
     locales: { root: { label: 'English', lang: 'en' } },
     sidebar: [
       { label: 'Catalog', slug: 'catalog' },

@@ -1,4 +1,135 @@
 ---
+import { getCollection } from 'astro:content';
 import { base, pageUrl } from '../lib/manifest.mjs';
-return Astro.redirect(pageUrl('catalog', base));
+const records = (await getCollection('catalog')).map(entry => entry.data);
+const count = type => records.filter(r => r.type === type).length;
+const img = name => base + '/brand/' + name;
+const catalog = pageUrl('catalog', base);
+const explorer = pageUrl('explore', base);
+const demonstrations = pageUrl('docs/demonstrations', base);
+const validation = pageUrl('docs/validation', base);
+const roadmap = pageUrl('docs/roadmap', base);
+const architecture = pageUrl('docs/architecture', base);
+const cases = pageUrl('docs/business-use-cases', base);
 ---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Explore the TD SYNNEX Paris BSC Cisco AI Infrastructure capability catalog, documented demonstrations and validation evidence."/>
+<meta name="theme-color" content="#082e48"/>
+<title>Cisco AI Infrastructure | TD SYNNEX Paris BSC</title>
+<style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#17374b;background:#fff;--navy:#063852;--ink:#16384c;--teal:#05a7a5;--blue:#0875ac;--pale:#eaf8f8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}a{text-decoration:none;color:inherit}button,a{touch-action:manipulation}
+.container{max-width:1190px;margin:auto;padding:0 26px}
+.site-head{background:white;border-bottom:1px solid #e3ebf0;position:relative;z-index:2}
+.head-inner{display:flex;align-items:center;justify-content:space-between;min-height:100px;gap:28px}
+.brandmark{display:flex;align-items:center;gap:20px;min-width:0}
+.brandmark .td{width:180px;height:auto;display:block}
+.brandmark .separator{width:1px;height:40px;background:#d4dee4}
+.brandmark .cisco{width:132px;height:auto;display:block}
+.site-head nav{display:flex;align-items:center;gap:24px;font-size:.9rem;font-weight:700}
+.site-head nav a:hover,.site-head nav a:focus-visible{color:var(--blue)}
+.head-cta{background:var(--teal);color:white!important;padding:14px 19px;border-radius:3px}
+.eyebrow{font-weight:800;font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;color:#3ccac4}
+.hero{background:linear-gradient(112deg,#063653 3%,#092d50 55%,#075b70 100%);color:white;overflow:hidden;position:relative}
+.hero:before{content:'';position:absolute;width:460px;height:460px;border:1px solid #ffffff24;right:-165px;top:-155px;border-radius:50%;box-shadow:0 0 0 80px #ffffff08,0 0 0 170px #ffffff05}
+.hero-inner{min-height:500px;padding-top:75px;padding-bottom:74px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:25px;position:relative}
+.hero h1{font-size:clamp(2.65rem,5vw,4.75rem);line-height:1.045;letter-spacing:-.045em;max-width:650px;margin:22px 0}
+.hero h1 span{color:#54d6d1}
+.hero p{color:#e1f1f5;max-width:560px;line-height:1.7;font-size:1.07rem;margin-bottom:30px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 21px;font-weight:800;font-size:.9rem;border-radius:3px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-teal{background:#02a9a8;color:white}.btn-outline{border:1px solid #b3e9f1;color:white}
+.hero-visual{position:relative;display:grid;place-items:center;min-height:370px}
+.hero-visual img{max-width:100%;height:auto;filter:drop-shadow(0 28px 45px #001c3850)}
+.visual-label{position:absolute;bottom:4%;right:4%;background:white;color:#173c50;box-shadow:0 10px 35px #001b3044;padding:18px 21px;border-radius:4px;max-width:270px}
+.visual-label strong{display:block;font-size:.94rem}.visual-label small{display:block;color:#5b7181;line-height:1.45;margin-top:5px}
+.stats{background:#e9f7f8;border-bottom:1px solid #d4e8eb}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:25px 22px;border-right:1px solid #cbdfe3}
+.stat:last-child{border:0}.stat strong{display:block;font-size:2rem;color:var(--navy);line-height:1}.stat span{display:block;color:#4b6577;font-weight:600;font-size:.87rem;margin-top:8px}
+section{scroll-margin-top:28px}.section{padding:88px 0}
+.section-label{font-size:.77rem;letter-spacing:.14em;color:#058d99;text-transform:uppercase;font-weight:800}
+h2{font-size:clamp(2rem,3.5vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:13px 0 20px;color:#102f45}
+.lead{color:#506779;line-height:1.75;max-width:760px;font-size:1.02rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+.card{background:white;border:1px solid #dae7eb;padding:34px 30px;box-shadow:0 6px 28px #0b41620b;border-radius:3px;display:flex;flex-direction:column;min-height:270px}
+.card .icon{font-size:1.55rem;display:grid;place-items:center;width:54px;height:54px;background:#dff5f4;color:#067a85;border-radius:4px;font-weight:800}
+.card h3{font-size:1.26rem;margin:25px 0 10px;color:#17344b}
+.card p{color:#5b6f7d;line-height:1.65;font-size:.95rem;margin:0 0 24px}
+.card a{margin-top:auto;font-size:.9rem;font-weight:800;color:#057f99}
+.soft{background:#f3f8fa}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}
+.picture{border-radius:4px;min-height:330px;background:linear-gradient(135deg,#043f59,#087b8d);display:grid;place-items:center;position:relative;overflow:hidden}
+.picture img{width:78%;filter:drop-shadow(0 23px 24px #001f343b)}
+.picture:before{content:'';height:290px;width:290px;position:absolute;right:-90px;bottom:-100px;border:2px solid #ffffff33;border-radius:50%}
+.steps{counter-reset:step;display:grid;gap:15px;margin-top:28px}
+.step{display:grid;grid-template-columns:45px 1fr;gap:17px;align-items:start}
+.step:before{counter-increment:step;content:counter(step,decimal-leading-zero);font-weight:900;color:#028e98;font-size:1.25rem}
+.step strong{display:block;color:#14374b;font-size:1.06rem}.step p{margin:5px 0;color:#577080;line-height:1.6;font-size:.94rem}
+.resource{background:#0a4059;color:white}
+.resource .section-label,.resource h2{color:white}
+.resource .lead{color:#d9edf2}
+.resource-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.resource-links a{display:block;padding:24px;border:1px solid #ffffff66;border-radius:3px;background:#ffffff0c;font-weight:800}
+.resource-links small{display:block;font-weight:400;color:#d0e6ed;margin-top:9px;line-height:1.5}
+.resource-links a:hover{background:#ffffff24}
+footer{padding:40px 0;background:#052d43;color:#b9d2dd}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:26px}
+footer img{width:170px;background:white;padding:9px 12px;border-radius:3px}
+footer p{font-size:.83rem;line-height:1.7;max-width:590px;margin:0}
+footer a{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:3px solid #07b8c8;outline-offset:3px}
+@media(max-width:950px){.hero-inner{grid-template-columns:1fr}.hero-visual{min-height:270px}.hero-visual img{max-height:320px}.site-head nav{gap:12px;flex-wrap:wrap}.split{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.container{padding:0 18px}.head-inner{align-items:flex-start;flex-direction:column;padding-top:18px;padding-bottom:18px;gap:15px}.brandmark .td{width:135px}.brandmark .cisco{width:92px}.brandmark .separator{height:30px}.site-head nav{font-size:.78rem;gap:14px}.head-cta{padding:10px 12px}.hero-inner{padding-top:55px;padding-bottom:55px}.hero-visual{display:none}.stat-grid{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid #cbdfe3}.cards,.resource-links{grid-template-columns:1fr}.section{padding:60px 0}.picture{min-height:230px}.picture img{width:70%}}
+</style>
+</head>
+<body>
+<header class="site-head"><div class="container head-inner">
+<a href={base + '/'} class="brandmark" aria-label="TD SYNNEX Cisco AI Infrastructure home"><img class="td" src={img('td-synnex-logo.png')} alt="TD SYNNEX"/><span class="separator" aria-hidden="true"></span><img class="cisco" src={img('cisco-distributor.png')} alt="Cisco Distributor"/></a>
+<nav aria-label="Main navigation"><a href="#value">Why TD SYNNEX</a><a href="#solutions">Solutions</a><a href={validation}>Validation</a><a class="head-cta" href={explorer}>Explore catalog</a></nav>
+</div></header>
+<main>
+<div class="hero"><div class="container hero-inner">
+<div><div class="eyebrow">TD SYNNEX · Cisco AI infrastructure & connectivity</div><h1>Accelerate AI.<br/><span>Build with confidence.</span></h1>
+<p>Discover documented AI infrastructure capabilities, demonstrations and validation evidence from the Paris BSC laboratory — with a clear path from business opportunity to technical exploration.</p>
+<div class="actions"><a class="btn btn-teal" href={explorer}>Explore capabilities</a><a class="btn btn-outline" href={demonstrations}>View demonstrations</a></div></div>
+<div class="hero-visual"><img src={img('cisco-intro.png')} alt="Cisco infrastructure illustration"/><div class="visual-label"><strong>Paris BSC · Secure AI Factory</strong><small>Technical evidence, readiness and limitations in one public catalog.</small></div></div>
+</div></div>
+<div class="stats"><div class="container stat-grid">
+<div class="stat"><strong>{count('solution')}</strong><span>solution blueprints</span></div>
+<div class="stat"><strong>{count('useCase')}</strong><span>business use cases</span></div>
+<div class="stat"><strong>{count('demonstration')}</strong><span>documented demonstrations</span></div>
+<div class="stat"><strong>{count('validation')}</strong><span>validation records</span></div>
+</div></div>
+<section id="value" class="section"><div class="container">
+<div class="section-label">Why TD SYNNEX for Cisco</div><h2>From AI ambition to practical evidence.</h2><p class="lead">Find what a solution is designed to do, which infrastructure it depends on, and what has actually been validated. Commercial teams and technical specialists can follow the same source of truth.</p>
+<div class="cards">
+<article class="card"><div class="icon" aria-hidden="true">01</div><h3>Business-aligned exploration</h3><p>Start with use cases and customer outcomes, then connect each opportunity to the relevant technical capabilities.</p><a href={cases}>Explore business use cases →</a></article>
+<article class="card"><div class="icon" aria-hidden="true">02</div><h3>Solution engineering clarity</h3><p>Review architecture, components, dependencies and constraints before planning a technical conversation.</p><a href={architecture}>Review architecture →</a></article>
+<article class="card"><div class="icon" aria-hidden="true">03</div><h3>Transparent validation</h3><p>Read the original status and evidence records without confusing planned work with validated demonstrations.</p><a href={validation}>Check validation evidence →</a></article>
+</div></div></section>
+<section id="solutions" class="section soft"><div class="container split">
+<div class="picture"><img src={img('cisco-intro.png')} alt="Cisco technology infrastructure visual"/></div>
+<div><div class="section-label">Cisco AI infrastructure laboratory</div><h2>Explore the capabilities behind the solution.</h2>
+<p class="lead">The Paris BSC catalog connects technical components to use cases and demonstrations. It distinguishes verified evidence, remaining constraints and future roadmap items.</p>
+<div class="steps"><div class="step"><div><strong>Discover</strong><p>Find the use case and the relevant solution blueprint.</p></div></div>
+<div class="step"><div><strong>Evaluate</strong><p>Inspect compatibility, demonstrated functionality and known limitations.</p></div></div>
+<div class="step"><div><strong>Engage</strong><p>Use the documented findings to scope a guided technical discussion or validation.</p></div></div></div>
+<div class="actions" style="margin-top:28px"><a class="btn btn-teal" href={explorer}>Browse the capability explorer</a></div>
+</div></div></section>
+<section class="section resource"><div class="container">
+<div class="section-label">Resources and next steps</div><h2>Everything you need to explore further.</h2><p class="lead">Choose the level of detail appropriate to your next discussion — commercial overview, live evidence or documented progress.</p>
+<div class="resource-links">
+<a href={catalog}>Full catalog<small>Single source of truth for the Paris BSC laboratory</small></a>
+<a href={demonstrations}>Demonstrations<small>What is documented and how it can be shown</small></a>
+<a href={roadmap}>Development roadmap<small>What is planned, pending or in progress</small></a>
+</div></div></section>
+</main>
+<footer><div class="container foot"><img src={img('td-synnex-logo.png')} alt="TD SYNNEX"/><p>Paris BSC · Cisco AI Infrastructure Capability Catalog<br/>A TD SYNNEX partner-facing resource. Technical status and supporting evidence remain governed by the original catalog documentation.<br/><a href={pageUrl('security',base)}>Security</a> · <a href={pageUrl('contributing',base)}>Contributing</a></p></div></footer>
+</body>
+</html>

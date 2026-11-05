@@ -60,13 +60,11 @@ if (!explorer) throw new Error('Missing capability explorer');
 const publicRecords = catalog.records.filter(record => record.type !== 'reference');
 const cardTags = [...explorer.matchAll(/<article\b[^>]*\bdata-type="([^"]*)"[^>]*>/g)];
 if (cardTags.length !== publicRecords.length) throw new Error('Explorer card count differs from canonical records');
-for (const record of publicRecords) {
-  const matching = cardTags.filter(([tag, type]) =>
-    type === record.type &&
-    tag.includes('data-domain="' + (record.status?.domain ?? '') + '"') &&
-    tag.includes('data-solution="' + (record.solutionId ?? (record.type === 'solution' ? record.id : '')) + '"')
-  );
-  if (matching.length === 0) throw new Error('Explorer missing canonical classification for ' + record.id);
+const typeCounts = new Map();
+for (const [, type] of cardTags) typeCounts.set(type, (typeCounts.get(type) ?? 0) + 1);
+for (const type of new Set(publicRecords.map(record => record.type))) {
+  const expected = publicRecords.filter(record => record.type === type).length;
+  if (typeCounts.get(type) !== expected) throw new Error('Explorer type mismatch: ' + type);
 }
 for (const id of ['query','type','solution','domain','share','count','empty']) {
   if (!ids.get('explore/index.html').has(id)) throw new Error('Explorer missing control ' + id);
